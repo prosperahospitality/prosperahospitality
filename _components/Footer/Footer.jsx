@@ -1,9 +1,8 @@
 import React from 'react'
-import {Button} from "@nextui-org/button";
 
-const Footer= () => {
+const Footer = () => {
   return (
-    <Button>Footer</Button>
+    <div>Footer</div>
   )
 }
 

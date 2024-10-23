@@ -1,9 +1,10 @@
 import React from 'react'
-import {Button} from "@nextui-org/button";
 
-const NavBar= () => {
+const NavBar = () => {
   return (
-    <Button>Nav Bar</Button>
+    <div className='bg-red-500'>
+      <div className='py-4 w-[80%] mx-auto'>NavBar</div>
+    </div>
   )
 }
 
