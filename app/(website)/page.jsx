@@ -1,11 +1,13 @@
-import Landing from '@/_components/home/Landing'
+import Landing from '@/_components/Home/Landing'
 import React from 'react'
-const page = () => {
+import NumberStats from '@/_components/Home/NumberStats'
+const Home = () => {
   return (
     <div>
-     <Landing/>
+      <Landing />
+      <NumberStats />
     </div>
   )
 }
 
-export default page
+export default Home
