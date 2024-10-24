@@ -4,6 +4,7 @@ const IMAGES = {
     image1: '/img/Img1.png',
     image2: '/img/Img2.png',
     image3: '/img/Img3.png',
+    revenue: '/img/revenue.svg',
 }
 
 export default IMAGES;
