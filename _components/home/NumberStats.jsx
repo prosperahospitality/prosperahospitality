@@ -36,32 +36,39 @@ const NumberStats = () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting && !hasAnimated) {
                         setHasAnimated(true);
-            
-                        animateNumber(0, 60, 6000, setOccupancyRate);
- 
-                        animateNumber(0, 72, 6000, setRepeatCustomerRate);
-
-                        animateNumber(0, 86, 6000, setCustomerSatisfaction);
+                        
+                        
+                        setTimeout(() => {
+                            animateNumber(0, 60, 6000, setOccupancyRate);
+                            animateNumber(0, 72, 6000, setRepeatCustomerRate);
+                            animateNumber(0, 86, 6000, setCustomerSatisfaction);
+                        }, 1000);
                     }
                 });
             },
-            { threshold: 0.5 }
+            {
+                root: null, 
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1 
+            }
         );
-
+    
         if (statsRef.current) {
             observer.observe(statsRef.current);
         }
-
+    
         return () => {
             if (statsRef.current) {
                 observer.unobserve(statsRef.current);
             }
         };
     }, [hasAnimated]);
+    
+    
 
     return (
         <div ref={statsRef} className="w-full flex justify-center items-center">
-            <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-3 gap-0 md:gap-4 lg:gap-4 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 md:gap-4 lg:gap-4 p-4 w-[90%] lg:[80%]">
                 
                 {/* First stat */}
                 <div className="flex justify-start items-start md:justify-center md:items-center lg:justify-center lg:items-center h-44 lg:h-48 rounded-md">
