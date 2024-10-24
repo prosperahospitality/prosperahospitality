@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react';
 
 const Landing = () => {
     return (
-        <div className='w-full h-[80vh] md:h-[90vh] py-10 lg:p-0 lg:h-[90vh] flex justify-center items-center'>
+        <div className='w-full h-[80vh] md:h-[80vh] py-10 lg:p-0 lg:h-[90vh] flex justify-center items-center'>
             <div className='relative w-[90%] lg:w-[80%] mx-auto flex justify-center items-center h-full'>
                 <div className='flex flex-col gap-10 justify-start lg:justify-center items-center'>
                     <div className='w-full flex justify-start lg:justify-center items-center '>
