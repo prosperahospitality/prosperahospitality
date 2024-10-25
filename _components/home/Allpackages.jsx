@@ -30,7 +30,7 @@ const Allpackages = () => {
     const buttonsData = [
         { id: 0, heading: 'Revenue Management', content: 'Through our data-driven approach, We analyze market trends and competitor pricing to optimize occupancy and maximize your revenue potential.', image: IMAGES.revenue },
         { id: 1, heading: 'Website Development', content: 'Our custom software and website solutions streamline operations and enhance guest experiences, driving efficiency and revenue growth.', image: IMAGES.revenue },
-        { id: 2, heading: 'Digital Marketing', content: 'Our digital marketing services boost your hotel’s visibility through targeted SEO, social media, and online advertising.', image: IMAGES.revenue },
+        { id: 2, heading: 'Digital Marketing', content: 'Our digital marketing services boost your hotel’s visibility through targeted SEO, social media, and online advertising.', image: IMAGES.digitalmarketing },
     ];
 
     // Updated handleClick function to keep a button always active

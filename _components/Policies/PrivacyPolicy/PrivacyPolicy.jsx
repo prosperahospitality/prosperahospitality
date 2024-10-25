@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
 
             </div>
             <div className="w-[95%] m-auto flex gap-5 flex-start mb-6 mt-6">
-                <Link href="/policies/Terms-Conditions" passHref>
+                <Link href="/tearms-and-conditions" passHref>
                     <div className="flex px-4 py-2 gap:[5px] md:gap-2 border-blue-500 text-blue-500 shadow-2xl border rounded font-semibold tracking-wide hover:bg-blue-500 hover:text-white">
                         Terms & Condition
                         <span className="flex justify-center items-center">
