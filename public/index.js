@@ -13,6 +13,10 @@ const IMAGES = {
     insta3: '/img/insta3.png',
     insta4: '/img/insta4.png',
     insta5: '/img/insta5.png',
+    insta6: '/img/insta6.png',
+    insta7: '/img/insta7.png',
+    insta8: '/img/insta8.png',
+    isologo: '/img/isologo.png'
 }
 
 export default IMAGES;

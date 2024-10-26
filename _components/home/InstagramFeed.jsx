@@ -32,56 +32,55 @@ export default function InstagramReels({ instaFeed }) {
     {
       url: IMAGES.insta1,
       type: "image",
-      alt: "Ayodhya Image 1",
+      alt: "insta1",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
       url: IMAGES.insta2,
       type: "image",
-      alt: "Ayodhya Video 1",
+      alt: "insta2",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
       url: IMAGES.insta3,
       type: "image",
-      alt: "Ayodhya Image 1",
+      alt: "insta3",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
       url: IMAGES.insta4,
       type: "image",
-      alt: "Ayodhya Video 1",
+      alt: "insta4",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
       url: IMAGES.insta5,
       type: "image",
-      alt: "Ayodhya Image 1",
+      alt: "insta5",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
-      url: IMAGES.policy,
+      url: IMAGES.insta6,
       type: "image",
-      alt: "Ayodhya Video 1",
+      alt: "insta6",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
-      url: IMAGES.policy,
+      url: IMAGES.insta7,
       type: "image",
-      alt: "Ayodhya Image 1",
+      alt: "insta7",
       link: "https://www.instagram.com/prosperahospitality/",
     },
     {
-      url: IMAGES.policy,
+      url: IMAGES.insta8,
       type: "image",
-      alt: "Ayodhya Video 1",
+      alt: "insta8",
       link: "https://www.instagram.com/prosperahospitality/",
     },
   ];
 
 
   const handleExploreMore = () => {
-    console.log("Abcd")
     window.open('https://www.instagram.com/prosperahospitality/', "_blank");
   }
 
