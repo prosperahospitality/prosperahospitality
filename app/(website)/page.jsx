@@ -8,9 +8,18 @@ import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
 const Home = () => {
+  
+  const revenuedata = [
+    {
+      "key": "1",
+      "title": " Growth Made Easy.",
+      "description": "At Prospera Hospitality, we create simple, tailored strategies that address your hotel’s unique needs. Our data-driven insights empower you to optimize pricing and maximize occupancy for sustainable revenue growth."
+    }
+  ]
+
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
-      <Landing />
+      <Landing revenuedata={revenuedata}/>
       <HomeCards />
       <NumberStats />
       <Allpackages />
