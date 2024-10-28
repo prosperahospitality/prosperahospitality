@@ -18,7 +18,8 @@ const NavBar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle mobile menu
 
   const toggleMobileDropdown = (index) => {
-    setActiveMobileDropdown((prev) => (prev === index ? null : index)); // Toggle mobile dropdown
+    setActiveMobileDropdown((prev) => (prev === index ? null : index));
+    setIsMenuOpen(false); // Toggle mobile dropdown
   };
 
   const isLinkActive = (link) => {
@@ -26,6 +27,10 @@ const NavBar = () => {
       return link.sublinks.some((sublink) => pathname === sublink.url);
     }
     return pathname === link.url;
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close the menu
   };
 
   return (
@@ -69,11 +74,10 @@ const NavBar = () => {
             >
               <Link
                 href={link.url || "#"}
-                className={`p-2 ${
-                  isLinkActive(link)
+                className={`p-2 ${isLinkActive(link)
                     ? "text-black font-bold"
                     : "text-gray-500 font-semibold hover:text-black"
-                }`}
+                  }`}
               >
                 {link.name}
               </Link>
@@ -84,11 +88,10 @@ const NavBar = () => {
                     <Link
                       key={subIndex}
                       href={sublink.url}
-                      className={`block p-2 ${
-                        pathname === sublink.url
+                      className={`block p-2 ${pathname === sublink.url
                           ? "text-black font-bold"
                           : "text-gray-500 font-semibold hover:text-black"
-                      }`}
+                        }`}
                     >
                       {sublink.name}
                     </Link>
@@ -117,11 +120,10 @@ const NavBar = () => {
             <div key={index} className="relative w-full text-start ">
               <button
                 onClick={() => toggleMobileDropdown(index)}
-                className={`p-2 w-full text-start px-5 flex justify-between items-center ${
-                  isLinkActive(link)
+                className={`p-2 w-full text-start px-5 flex justify-between items-center ${isLinkActive(link)
                     ? "text-black font-bold"
                     : "text-gray-500 font-semibold hover:text-black"
-                }`}
+                  }`}
               >
                 {link.name}
                 {/* Chevron icon to indicate open/close state (only for sublinks) */}
@@ -143,11 +145,11 @@ const NavBar = () => {
                     <Link
                       key={subIndex}
                       href={sublink.url}
-                      className={`block p-2 w-full text-start px-5 ${
-                        pathname === sublink.url
+                      onClick={handleLinkClick}
+                      className={`block p-2 w-full text-start px-5 ${pathname === sublink.url
                           ? "text-black font-bold"
                           : "text-gray-500 font-semibold hover:text-black"
-                      }`}
+                        }`}
                     >
                       {sublink.name}
                     </Link>

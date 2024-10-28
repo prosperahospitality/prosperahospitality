@@ -7,25 +7,25 @@ const Challenges = () => {
         {
             key: "1",
             "title": "Limited Online Visibility",
-            "star": <Star className='fill-[#800000]' />,
+            "star": <Star className='fill-[#800000] size-5 lg:w-[1.50rem] lg:h-[1.50rem]' />,
             "description": "We list your property on multiple Online Travel Agencies, significantly enhancing your online presence and attracting more guests."
         },
         {
             key: "2",
             "title": "Delayed Payments",
-            "star": <Star className='fill-[#800000]' />,
+            "star": <Star className='fill-[#800000] size-5 lg:w-[1.50rem] lg:h-[1.50rem]' />,
             "description": "Our partnerships with OTAs enable us to fast-track payments, ensuring you receive funds promptly."
         },
         {
             key: "3",
             "title": "Revenue Optimization",
-            "star": <Star className='fill-[#800000]' />,
+            "star": <Star className='fill-[#800000] size-5 lg:w-[1.50rem] lg:h-[1.50rem]' />,
             "description": "Our expertise in online distribution helps strategically price your property, maximizing revenue across various platforms."
         },
         {
             key: "4",
             "title": "Time-Consuming Tasks",
-            "star": <Star className='fill-[#800000]' />,
+            "star": <Star className='fill-[#800000] size-5 lg:w-[1.50rem] lg:h-[1.50rem]' />,
             "description": "We handle all online management tasks, allowing you to focus on welcoming guests and providing exceptional service."
         }
     ]
@@ -46,7 +46,7 @@ const Challenges = () => {
                                     <div className='text-[#800000] text-xl font-bold flex justify-end flex-col'>
                                         <h2>{e.title}</h2>
                                     </div>
-                                    <div className='bg-gray-100 text-[#800000] w-11 h-12 rounded-b-full flex justify-center items-center'>
+                                    <div className='bg-gray-100 text-[#800000] w-9 h-10 md:w-11 md:h-12 rounded-b-full flex justify-center items-center'>
                                         {e.star}
                                     </div>
                                 </div>
