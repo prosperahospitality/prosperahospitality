@@ -1,6 +1,6 @@
 "use client";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Divider } from "@nextui-org/react";
 import { siteConfig } from "@/config/siteconfig";
 import { Link } from "@nextui-org/link";
@@ -9,8 +9,13 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import IMAGES from "@/public/index";
 import { usePathname } from "next/navigation";
+import axios from "axios";
 
 export default function Footer() {
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const iconComponents = {
     Facebook: <Facebook className="size-5" />,
@@ -36,31 +41,23 @@ export default function Footer() {
     content: "text-small xl:text-medium px-2",
   };
 
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(0);
+  const handleSubmit = async () => {
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    console.log("Data", email, fullName, phoneNumber)
 
-    // const response = await axios.post("/api/send-email", {
-    //   operation: "sendenquirymail",
-    //   name: fullName,
-    //   email: email,
-    //   number: phoneNumber
-    // })
-    // // console.log(response.data, "check respobse");
-    // if (response.data.status === 200) {
-    //   // alert(response.data.message);
-    //   setFullName("");
-    //   setEmail("");
-    //   setPhoneNumber("");
-    //   Swal.fire({
-    //     title: "Email sent and enquiry saved successfully",
-    //     text: "Team connect with you soon",
-    //     icon: "success"
-    //   });
-    // }
+    const response = await axios.post("/api/send-email", {
+      operation: "footercontact",
+      name: fullName,
+      email: email,
+      number: phoneNumber
+    })
+    if (response.data.status === 200) {
+      alert("Email sent and enquiry saved successfully")
+      setFullName("");
+      setEmail("");
+      setPhoneNumber("");
+    }
+
     // else if (response.data.status === 402) {
     //   Swal.fire({
     //     title: "Number must be exactly 10 digits and contain only numeric values",
@@ -85,6 +82,7 @@ export default function Footer() {
     //     setEmail("");
     //     setPhoneNumber(0);
   };
+  
 
   return (
     <>
@@ -237,34 +235,34 @@ export default function Footer() {
       </div>
 
       <div className="w-full bg-white mb-7">
-          <div className="w-[80%] mx-auto lg:flex items-center justify-between py-2">
-            <div className="md:flex items-center md:justify-between gap-4">
-              <Link href="/" className="flex justify-center items-center gap-5">
-                <img
-                  src={IMAGES.mainLogo}
-                  alt="prospera-logo"
-                  fill
-                  className="w-10 h-10 object-contain"
-                />
-                <div className="flex flex-col">
-                  <span className="text-[#800000] font-semibold leading-tight">
-                    Prospera
-                  </span>
-                  <span className="font-semibold text-gray-400 leading-tight">
-                    Hospitality
-                  </span>
-                </div>
-              </Link>
+        <div className="w-[80%] mx-auto lg:flex items-center justify-between py-2">
+          <div className="md:flex items-center md:justify-between gap-4">
+            <Link href="/" className="flex justify-center items-center gap-5">
+              <img
+                src={IMAGES.mainLogo}
+                alt="prospera-logo"
+                fill
+                className="w-10 h-10 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="text-[#800000] font-semibold leading-tight">
+                  Prospera
+                </span>
+                <span className="font-semibold text-gray-400 leading-tight">
+                  Hospitality
+                </span>
+              </div>
+            </Link>
 
-            </div>
-            <div className="flex mt-6 lg:mt-0 justify-between items-center gap-4 text-gray-500">
+          </div>
+          <div className="flex mt-6 lg:mt-0 justify-between items-center gap-4 text-gray-500">
 
-              <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
-                Let&apos;s Get Started
-              </Button>
-            </div>
+            <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
+              Let&apos;s Get Started
+            </Button>
           </div>
         </div>
+      </div>
 
       <footer className="w-full h-fit relative bg-gray-100 text-gray-500">
         <div className="w-[80%] mx-auto">
@@ -275,8 +273,8 @@ export default function Footer() {
               <div className="p-3 px-0 flex flex-col gap-3">
                 <h4 className="font-semibold">Our Office</h4>
                 <p className="text-gray-400 text-sm">
-                Office No.1006
-                Juhi Niharika Mirage, 274, Kopra Rd, Sector 10, Kharghar, Navi Mumbai, Maharashtra 410210.
+                  Office No.1006
+                  Juhi Niharika Mirage, 274, Kopra Rd, Sector 10, Kharghar, Navi Mumbai, Maharashtra 410210.
                 </p>
                 <Link href="https://maps.app.goo.gl/LQZzRHKRaVXkZrc59" passHref target="_blank" className="font-semibold text-themeColor">
                   Locate Us
@@ -358,13 +356,14 @@ export default function Footer() {
                     inbox.
                   </p>
 
-                  <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-5">
                     <div>
                       <div className="flex justify-between gap-5 flex-col lg:flex-row">
                         <input
                           type="text"
                           placeholder="Full Name"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           required
                         />
@@ -372,6 +371,7 @@ export default function Footer() {
                           type="email"
                           placeholder="Email ID"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
                         />
@@ -381,21 +381,23 @@ export default function Footer() {
                     <div>
                       <div className="flex justify-between gap-5 flex-col lg:flex-row">
                         <input
-                          type="number"
+                          type="text"
                           placeholder="Phone Number"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={phoneNumber}
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           required
                         />
-                        <button 
-                          type="submit"
+                        <button
+                          type="button"
                           className="border flex-1 p-3 rounded-xl bg-[#800000] text-white font-medium"
+                          onClick={() => handleSubmit()}
                         >
                           Get a call back!
                         </button>
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
 
