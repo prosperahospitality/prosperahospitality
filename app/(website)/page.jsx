@@ -7,8 +7,9 @@ import OurOffers from '@/_components/Home/OurOffers'
 import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
+import Testimonial from '@/_components/Testimonial'
 const Home = () => {
-  
+
   const revenuedata = [
     {
       "key": "1",
@@ -19,7 +20,7 @@ const Home = () => {
 
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
-      <Landing revenuedata={revenuedata}/>
+      <Landing revenuedata={revenuedata} />
       <HomeCards />
       <NumberStats />
       <Allpackages />
@@ -27,6 +28,7 @@ const Home = () => {
       <Blogs />
       <InstagramFeed />
       <ContactForm />
+      <Testimonial />
     </div>
   )
 }
