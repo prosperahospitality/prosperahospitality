@@ -265,7 +265,7 @@ export default function Footer() {
       </div>
 
       <footer className="w-full h-fit relative bg-gray-100 text-gray-500">
-        <div className="w-[80%] mx-auto">
+        <div className="w-[90%] lg:w-[80%] mx-auto">
           {/* <Divider className="w-full" /> */}
 
           <div className="flex w-full mx-auto flex-col lg:flex-row py-5 text-sm">
@@ -281,7 +281,7 @@ export default function Footer() {
                 </Link>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Call us</h4>
                 <p className="text-gray-400">
                   Request a quote or just chat about your next vacation
@@ -289,7 +289,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">7977383452</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Write to us</h4>
                 <p className="text-gray-400">
                   Be it an inquiry, feedback, or a simple suggestion.
@@ -299,7 +299,7 @@ export default function Footer() {
                 </Link>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <p className="font-semibold">Connect with us:</p>
                 <div className="flex space-x-4 mt-4 md:mt-0 text-themeColor ">
                   {socialLinks.map((link, index) => (
@@ -326,7 +326,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">Phone no. - +91 70217 19016</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Support</h4>
                 <Link href="mailto:contact@prosperaahospitality.com" className="text-gray-400 text-sm">
                   Email: contact@prosperaahospitality.com
@@ -334,7 +334,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">Phone no. - +91 89281 22610</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Tech Support</h4>
                 <Link href="mailto:tech@prosperaahospitality.com" className="text-gray-400 text-sm">
                   Email: tech@prosperaahospitality.com
@@ -344,7 +344,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full ">
+          <div className="w-full">
             <div className="flex w-full mx-auto flex-col lg:flex-row py-5 lg:py-10 border-b-2 border-gray-300 gap-[0.75rem]">
               <div className="flex-1">
                 <div className="w-full lg:w-[80%] flex flex-col gap-4">

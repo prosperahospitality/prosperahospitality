@@ -3,6 +3,9 @@ import Revenuefeatures from '@/_components/OurServices/RevenueManagement/Revenue
 import ContactSupport from '@/_components/OurServices/RevenueManagement/ContactSupport'
 import React from 'react'
 import Challenges from '@/_components/OurServices/RevenueManagement/Challenges'
+import Rm from '@/_components/OurServices/RevenueManagement/Rm'
+
+
 const revenuemanagement = () => {
 
   const revenuedata = [
@@ -19,6 +22,7 @@ const revenuemanagement = () => {
       <Revenuefeatures />
       <ContactSupport />
       <Challenges />
+      <Rm />
     </div>
   )
 }

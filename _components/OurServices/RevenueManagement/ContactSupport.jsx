@@ -5,7 +5,7 @@ import IMAGES from '@/public'
 const ContactSupport = () => {
     return (
         <div className='w-full flex justify-center items-center'>
-            <div className='w-[80%] flex'>
+            <div className='w-[90%] lg:w-[80%] flex'>
                 <div className='py-4 flex flex-col gap-6'>
                     <div className='text-gray-600 text-4xl'>24 X 7</div>
                     <div className='text-gray-600 text-4xl'>Dedicated Manager</div>
