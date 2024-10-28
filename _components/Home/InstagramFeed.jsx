@@ -88,7 +88,7 @@ export default function InstagramReels({ instaFeed }) {
 
     <>
       <div className="w-full flex flex-col gap-8 justify-center items-center">
-        <div className='flex justify-between w-[80%]'>
+        <div className='flex justify-between w-[87%] lg:w-[80%]'>
           <div className='text-start text-3xl text-gray-600'>
             <div className=''>Let’s connect on</div>
             <div className='mt-2'>Socials</div>
@@ -103,7 +103,7 @@ export default function InstagramReels({ instaFeed }) {
         </div>
       </div>
 
-      <div className="w-[80%] mx-auto relative">
+      <div className="w-[87%] lg:w-[80%] mx-auto relative">
         <Swiper
           className="mySwiper"
           navigation={{

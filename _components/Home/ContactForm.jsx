@@ -59,13 +59,13 @@ const ContactForm = () => {
     };
 
     const handleSelectedCountryCode = (e) => {
-        setSelectedCodeDial(countryPhoneCodes.find((item) => item.name === e.target.value).dial_code);
+        setSelectedCodeDial(countryPhoneCodes.find((item) => item.name === e.target.value)?.dial_code);
         setSelectedCode(e.target.value);
 
         setFormValues((prevValues) => ({
             ...prevValues,
             selectedCode: e.target.value,
-            selectedCodeDial: countryPhoneCodes.find((item) => item.name === e.target.value).dial_code,
+            selectedCodeDial: countryPhoneCodes.find((item) => item.name === e.target.value)?.dial_code,
         }));
     };
 
@@ -133,7 +133,7 @@ const ContactForm = () => {
 
     return (
         <div className='w-full flex justify-center items-center p-4'>
-            <div className='flex flex-col md:flex-row w-full md:w-[80%] h-auto bg-gradient-to-r from-red-200 via-red-50 to-red-50 rounded-2xl'>
+            <div className='flex flex-col md:flex-row w-full md:w-[82%] h-auto bg-gradient-to-r from-red-200 via-red-50 to-red-50 rounded-2xl'>
                 <div className='w-full md:w-[40%] px-4 md:px-8 py-8 md:py-16'>
                     {/* Image (uncomment if needed) */}
                     {/* <Image
@@ -145,7 +145,7 @@ const ContactForm = () => {
                     /> */}
                     <div className='text-start text-3xl md:text-5xl text-gray-500'>
                         <div>Let&apos;s grow your </div>
-                        <div>business together!</div>
+                        <div>Business Together!</div>
                     </div>
                 </div>
                 <div className='w-full md:w-[60%] px-4 md:px-8 py-8 md:py-16'>
