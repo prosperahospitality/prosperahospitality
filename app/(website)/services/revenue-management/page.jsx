@@ -2,7 +2,7 @@ import Landing from '@/_components/Home/Landing'
 import Revenuefeatures from '@/_components/OurServices/RevenueManagement/Revenuefeatures'
 import ContactSupport from '@/_components/OurServices/RevenueManagement/ContactSupport'
 import React from 'react'
-
+import Challenges from '@/_components/Services/Challenges'
 const revenuemanagement = () => {
 
   const revenuedata = [
@@ -14,10 +14,11 @@ const revenuemanagement = () => {
   ]
 
   return (
-    <div className='flex flex-col gap-10 lg:gap-16`'>
+    <div className='flex flex-col gap-10 lg:gap-16'>
       <Landing revenuedata={revenuedata} />
       <Revenuefeatures />
       <ContactSupport />
+      <Challenges />
     </div>
   )
 }

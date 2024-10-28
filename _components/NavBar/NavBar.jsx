@@ -117,7 +117,7 @@ const NavBar = () => {
             <div key={index} className="relative w-full text-start ">
               <button
                 onClick={() => toggleMobileDropdown(index)}
-                className={`p-2 w-full block text-start px-5 flex justify-between items-center ${
+                className={`p-2 w-full text-start px-5 flex justify-between items-center ${
                   isLinkActive(link)
                     ? "text-black font-bold"
                     : "text-gray-500 font-semibold hover:text-black"
