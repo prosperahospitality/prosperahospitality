@@ -1,4 +1,5 @@
 import Landing from '@/_components/Home/Landing'
+import Challenges from '@/_components/Services/Challenges'
 import Revenuefeatures from '@/_components/Services/Revenuefeatures'
 import React from 'react'
 
@@ -13,9 +14,10 @@ const revenuemanagement = () => {
   ]
 
   return (
-    <div className='flex flex-col gap-10 lg:gap-16`'>
+    <div className='flex flex-col gap-10 lg:gap-16'>
       <Landing revenuedata={revenuedata} />
       <Revenuefeatures />
+      <Challenges />
     </div>
   )
 }

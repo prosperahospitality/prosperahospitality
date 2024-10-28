@@ -237,8 +237,8 @@ export default function Footer() {
       </div>
 
       <div className="w-full bg-white mb-7">
-          <div className="w-[80%] mx-auto lg:flex items-center justify-between py-2">
-            <div className="md:flex items-center md:justify-between gap-4">
+          <div className="w-[90%] lg:w-[80%] mx-auto flex items-center justify-between py-2">
+            <div className="w-[48%] flex items-center md:justify-between gap-4">
               <Link href="/" className="flex justify-center items-center gap-5">
                 <img
                   src={IMAGES.mainLogo}
@@ -257,8 +257,8 @@ export default function Footer() {
               </Link>
 
             </div>
-            <div className="flex mt-6 lg:mt-0 justify-between items-center gap-4 text-gray-500">
 
+            <div className="w-[48%] flex lg:mt-0 justify-end items-center gap-4 text-gray-500">
               <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
                 Let&apos;s Get Started
               </Button>
