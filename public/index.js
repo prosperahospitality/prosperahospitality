@@ -17,7 +17,8 @@ const IMAGES = {
     insta7: '/img/insta7.png',
     insta8: '/img/insta8.png',
     isologo: '/img/isologo.png',
-    ota: '/img/otamanagement.jpeg'
+    ota: '/img/otamanagement.jpeg',
+     profile: '/img/profile.webp'
 }
 
 export default IMAGES;
