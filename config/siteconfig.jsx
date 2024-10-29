@@ -314,15 +314,15 @@ export const siteConfig = {
     PoliciesItems: [
       {
         label: "Terms & Conditions",
-        href: "/policies/Terms-Conditions",
+        href: "/tearms-and-conditions",
       },
       {
         label: "Privacy Policy",
-        href: "/policies/Privacy-Policy",
+        href: "/policies/privacy-policy",
       },
       {
         label: "Refund Policy",
-        href: "/policies/Refund-Policy",
+        href: "/policies/refund-policy",
       },
     ],
   

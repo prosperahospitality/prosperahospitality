@@ -19,7 +19,9 @@ const IMAGES = {
     isologo: '/img/isologo.png',
     ota: '/img/otamanagement.jpeg',
     section4: '/img/section4.svg',
-    profile: '/img/profile.webp'
+    profile: '/img/profile.webp',
+    mobilesection4: '/img/mobilesection4.svg',
+    mandalaimg: '/img/mandalaimg.png'
 }
 
 export default IMAGES;

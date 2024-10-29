@@ -60,7 +60,7 @@ const TearmsAndConditions = () => {
             </div>
 
             {data.map((item) => (
-                <div key={item.id} className=" w-[95%] m-auto">
+                <div key={item.id} className="w-[90%] lg:w-[80%] m-auto">
                     <div className="mt-5 mb-4">
                         <h3 className="text-xl mb-3 font-extralight text-primary-300">
                             {item.heading}

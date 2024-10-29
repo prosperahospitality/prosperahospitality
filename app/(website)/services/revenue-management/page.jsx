@@ -2,7 +2,7 @@ import Landing from '@/_components/Home/Landing'
 import Revenuefeatures from '@/_components/OurServices/RevenueManagement/Revenuefeatures'
 import ContactSupport from '@/_components/OurServices/RevenueManagement/ContactSupport'
 import React from 'react'
-import Challenges from '@/_components/Services/Challenges'
+import Challenges from '@/_components/OurServices/RevenueManagement/Challenges'
 const revenuemanagement = () => {
 
   const revenuedata = [

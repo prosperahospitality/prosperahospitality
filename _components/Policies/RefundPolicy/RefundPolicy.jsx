@@ -23,7 +23,7 @@ const RefundPolicy = () => {
             <div className="text-xl text-primary-300 text-center font-extralight mt-4 md:text-2xl lg:text-4xl">
                 <h1>Refund Policy</h1>
             </div>
-            <div className=" w-[95%] m-auto">
+            <div className=" w-[90%] lg:w-[80%] m-auto">
                 <div className="mt-5 mb-4">
                     <h3 className="text-xl mb-3 font-extralight text-primary-300">
                         Refund Policy
@@ -32,7 +32,7 @@ const RefundPolicy = () => {
                         As a part of our agreement, we have refund and cancellation policies with different hotels  However, we have a standard refund policy for hotels, which can be negotiated by the hoteliers. These policies can also change based on demand and forecast.
                     </p>
                 </div>
-                <div className='w-[90%] m-auto xl:w-[95%] xl:m-auto'>
+                <div className='w-[90%] lg:w-[80%] m-auto xl:w-[95%] xl:m-auto'>
                     <ul className='list-disc'>
                         <li>If cancelled 15 days before check-in date: 100 % Refund.​</li>
                         <li>If cancelled within 15 days and before 7 days to check-in date:50 % Refund.</li>
@@ -45,7 +45,7 @@ const RefundPolicy = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-[95%] m-auto flex gap-5 flex-start mb-6 mt-6">
+            <div className="w-[90%] lg:w-[80%] m-auto flex gap-5 flex-start mb-6 mt-6">
                 <Link href="/tearms-and-conditions" passHref>
                     <div className="flex px-4 py-2 gap:[5px] md:gap-2 border-blue-500 text-blue-500 shadow-2xl border rounded font-semibold tracking-wide hover:bg-blue-500 hover:text-white">
                         Terms & Condition

@@ -1,5 +1,5 @@
 "use client";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, ArrowUpRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { Button, Divider } from "@nextui-org/react";
 import { siteConfig } from "@/config/siteconfig";
@@ -82,13 +82,13 @@ export default function Footer() {
     //     setEmail("");
     //     setPhoneNumber(0);
   };
-  
+
 
   return (
     <>
 
 
-      <div className="w-[80%] mx-auto mb-16">
+      <div className="w-[80%] mx-auto mb-16 mt-16">
         {/* #Mobile View */}
         <div className="lg:hidden w-full mx-auto mt-4">
           <div className="mt-6 w-full mx-auto">
@@ -163,6 +163,63 @@ export default function Footer() {
             </Accordion>
           </div>
         </div>
+
+
+        {/* Offer Card PC*/}
+        <div className="hidden lg:block w-full">
+          <div className="flex justify-between items-center bg-gray-100 rounded-xl">
+
+            <div className="w-[70%] pl-8">
+              <div className="text-7xl font-semibold text-[#800000]">40% 0ff</div>
+              <div className="text-xl mt-3 font-medium  text-gray-600 gap-2"><span className="pr-2">This Diwali get</span><Button isIconOnly className="rounded-full bg-white h-8 w-5"><ArrowUpRight className="h-5" /></Button></div>
+              <div className="flex flex-row justify-between">
+                <div className="text-xl font-medium text-gray-600">on all services of Prospera Hospitality</div>
+                <div className="text-sm content-end text-gray-400">Offer valid for limited period only* </div>
+              </div>
+            </div>
+            <div className="w-[30%]">
+              <Image
+                alt='image'
+                src={IMAGES.mandalaimg}
+                width={600}
+                height={600}
+                className='object-scale-down w-[80%] h-[80%] mx-auto'
+              />
+            </div>
+
+          </div>
+        </div>
+        {/* Offer Card*/}
+
+        {/* Offer Card Mobile*/}
+        <div className="block lg:hidden h-full w-full">
+          <div className="relative  bg-gray-100 rounded-xl py-4 overflow-hidden w-full h-[40vh] flex justify-center items-end">
+
+            <div className="absolute -top-24 -right-28 w-[100%]">
+              <Image
+                alt='image'
+                src={IMAGES.mandalaimg}
+                width={600}
+                height={600}
+                className='object-scale-down w-full h-full'
+              />
+            </div>
+
+            <div className="w-full px-4">
+              <div className="text-5xl font-semibold text-[#800000]">40% 0ff</div>
+              <div className="text-md mt-3 font-medium  text-gray-600 flex items-center justify-start gap-2">
+                <span className="pr-2">This Diwali get</span>
+                  <Button isIconOnly variant="faded" className="rounded-full ">
+                  <ArrowUpRight className="h-5" />
+                  </Button>
+                
+              </div>
+              <div className="text-md font-medium text-gray-600">on all services of Prospera Hospitality</div>
+            </div>
+
+          </div>
+        </div>
+        {/* Offer Card*/}
 
         {/* # pc view */}
         <div className="hidden lg:grid grid-cols-2 pt-4 gap-2">
