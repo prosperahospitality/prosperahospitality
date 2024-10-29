@@ -8,7 +8,7 @@ const Landing = (props) => {
     return (
         <div className='w-full h-[80vh] md:h-[80vh] py-10 lg:p-0 lg:h-[90vh] flex justify-center items-center'>
             <div className='relative w-[90%] lg:w-[80%] mx-auto flex justify-center items-center h-full'>
-                {props.revenuedata && props.revenuedata.map((e, i) => (
+                {props.content && props.content.map((e, i) => (
                     <div key={i} className='flex flex-col gap-10 justify-start lg:justify-center items-center'>
                         <div className='w-full flex justify-start lg:justify-center items-center '>
                             <h1 className='text-start lg:text-center text-6xl md:text-8xl lg:text-8xl text-[#800000] font-bold w-[90%] md:w-[70%] lg:w-[90%]'>
