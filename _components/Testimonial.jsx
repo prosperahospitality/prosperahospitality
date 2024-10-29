@@ -12,8 +12,6 @@ const Testimonial = () => {
                     <div className='flex justify-center items-center w-full h-[90vh] lg:h-[70vh]'>
                         <div className="relative flex justify-between items-center w-full h-full flex-col overflow-hidden">
                             <span className="flex justify-center items-center text-xl lg:text-4xl text-gray-100 w-full text-center font-bold">Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality Prospera Hospitality</span>
-                        </div>
-
                         <div className='w-full absolute top-0 bottom-0 my-auto left-0 flex justify-center items-center flex-col lg:flex-row '>
 
 
@@ -75,6 +73,8 @@ const Testimonial = () => {
                             </div>
 
                         </div>
+                        </div>
+
 
                     </div>
 
