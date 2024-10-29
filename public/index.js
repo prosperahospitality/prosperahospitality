@@ -18,6 +18,8 @@ const IMAGES = {
     insta8: '/img/insta8.png',
     isologo: '/img/isologo.png',
     ota: '/img/otamanagement.jpeg',
+    profile: '/img/profile.webp',
+    testbg: '/img/testbg.svg',
     section4: '/img/section4.svg',
     profile: '/img/profile.webp',
     test:'/img/test.jpg',

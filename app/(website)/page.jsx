@@ -7,10 +7,14 @@ import OurOffers from '@/_components/Home/OurOffers'
 import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
+<<<<<<< HEAD
+import Testimonial from '@/_components/Testimonial'
+=======
 import Image from 'next/image'
 import IMAGES from '@/public'
+>>>>>>> e7d41612cb65ea18fd81e27dea740a9b68568f2a
 const Home = () => {
-  
+
   const revenuedata = [
     {
       "key": "1",
@@ -21,7 +25,7 @@ const Home = () => {
 
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
-      <Landing revenuedata={revenuedata}/>
+      <Landing revenuedata={revenuedata} />
       <HomeCards />
       <NumberStats />
       <Allpackages />
@@ -29,6 +33,7 @@ const Home = () => {
       <Blogs />
       <InstagramFeed />
       <ContactForm />
+      <Testimonial />
     </div>
   )
 }
