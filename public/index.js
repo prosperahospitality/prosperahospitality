@@ -20,8 +20,13 @@ const IMAGES = {
     ota: '/img/otamanagement.jpeg',
     section4: '/img/section4.svg',
     profile: '/img/profile.webp',
+<<<<<<< HEAD
     test:'/img/test.jpg',
     testone:'/img/testone.jpg'
+=======
+    mobilesection4: '/img/mobilesection4.svg',
+    mandalaimg: '/img/mandalaimg.png'
+>>>>>>> 57fe4421133e31c848a354a5729dab8c400c56e2
 }
 
 export default IMAGES;
