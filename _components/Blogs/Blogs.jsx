@@ -22,7 +22,7 @@ const Blogs = () => {
 
   return (
     <>
-      <section className="max-w-7xl mx-auto px-8 pt-10">
+      <section className="w-[100%] mx-auto px-8 pt-10">
         <h1 className="text-4xl font-extralight text-center text-[#006FEE]">
           Latest blog posts
         </h1>
@@ -64,7 +64,7 @@ const Blogs = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-8 py-10">
+      <section className="w-[100%] mx-auto px-8 py-10">
         <h1 className="text-4xl font-extralight text-center text-[#006FEE]">
           Recent blog posts
         </h1>

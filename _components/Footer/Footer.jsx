@@ -1,6 +1,6 @@
 "use client";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
-import React, { useState } from "react";
+import { Facebook, Instagram, Linkedin, Youtube, ArrowUpRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
 import { Button, Divider } from "@nextui-org/react";
 import { siteConfig } from "@/config/siteconfig";
 import { Link } from "@nextui-org/link";
@@ -9,8 +9,13 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import IMAGES from "@/public/index";
 import { usePathname } from "next/navigation";
+import axios from "axios";
 
 export default function Footer() {
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const iconComponents = {
     Facebook: <Facebook className="size-5" />,
@@ -36,31 +41,23 @@ export default function Footer() {
     content: "text-small xl:text-medium px-2",
   };
 
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(0);
+  const handleSubmit = async () => {
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    console.log("Data", email, fullName, phoneNumber)
 
-    // const response = await axios.post("/api/send-email", {
-    //   operation: "sendenquirymail",
-    //   name: fullName,
-    //   email: email,
-    //   number: phoneNumber
-    // })
-    // // console.log(response.data, "check respobse");
-    // if (response.data.status === 200) {
-    //   // alert(response.data.message);
-    //   setFullName("");
-    //   setEmail("");
-    //   setPhoneNumber("");
-    //   Swal.fire({
-    //     title: "Email sent and enquiry saved successfully",
-    //     text: "Team connect with you soon",
-    //     icon: "success"
-    //   });
-    // }
+    const response = await axios.post("/api/send-email", {
+      operation: "footercontact",
+      name: fullName,
+      email: email,
+      number: phoneNumber
+    })
+    if (response.data.status === 200) {
+      alert("Email sent and enquiry saved successfully")
+      setFullName("");
+      setEmail("");
+      setPhoneNumber("");
+    }
+
     // else if (response.data.status === 402) {
     //   Swal.fire({
     //     title: "Number must be exactly 10 digits and contain only numeric values",
@@ -86,11 +83,12 @@ export default function Footer() {
     //     setPhoneNumber(0);
   };
 
+
   return (
     <>
 
 
-      <div className="w-[80%] mx-auto mb-16">
+      <div className="w-[80%] mx-auto mb-16 mt-16">
         {/* #Mobile View */}
         <div className="lg:hidden w-full mx-auto mt-4">
           <div className="mt-6 w-full mx-auto">
@@ -166,6 +164,63 @@ export default function Footer() {
           </div>
         </div>
 
+
+        {/* Offer Card PC*/}
+        <div className="hidden lg:block w-full">
+          <div className="flex justify-between items-center bg-gray-100 rounded-xl">
+
+            <div className="w-[70%] pl-8">
+              <div className="text-7xl font-semibold text-[#800000]">40% 0ff</div>
+              <div className="text-xl mt-3 font-medium  text-gray-600 gap-2"><span className="pr-2">This Diwali get</span><Button isIconOnly className="rounded-full bg-white h-8 w-5"><ArrowUpRight className="h-5" /></Button></div>
+              <div className="flex flex-row justify-between">
+                <div className="text-xl font-medium text-gray-600">on all services of Prospera Hospitality</div>
+                <div className="text-sm content-end text-gray-400">Offer valid for limited period only* </div>
+              </div>
+            </div>
+            <div className="w-[30%]">
+              <Image
+                alt='image'
+                src={IMAGES.mandalaimg}
+                width={600}
+                height={600}
+                className='object-scale-down w-[80%] h-[80%] mx-auto'
+              />
+            </div>
+
+          </div>
+        </div>
+        {/* Offer Card*/}
+
+        {/* Offer Card Mobile*/}
+        <div className="block lg:hidden h-full w-full">
+          <div className="relative  bg-gray-100 rounded-xl py-4 overflow-hidden w-full h-[40vh] flex justify-center items-end">
+
+            <div className="absolute -top-24 -right-28 w-[100%]">
+              <Image
+                alt='image'
+                src={IMAGES.mandalaimg}
+                width={600}
+                height={600}
+                className='object-scale-down w-full h-full'
+              />
+            </div>
+
+            <div className="w-full px-4">
+              <div className="text-5xl font-semibold text-[#800000]">40% 0ff</div>
+              <div className="text-md mt-3 font-medium  text-gray-600 flex items-center justify-start gap-2">
+                <span className="pr-2">This Diwali get</span>
+                  <Button isIconOnly variant="faded" className="rounded-full ">
+                  <ArrowUpRight className="h-5" />
+                  </Button>
+                
+              </div>
+              <div className="text-md font-medium text-gray-600">on all services of Prospera Hospitality</div>
+            </div>
+
+          </div>
+        </div>
+        {/* Offer Card*/}
+
         {/* # pc view */}
         <div className="hidden lg:grid grid-cols-2 pt-4 gap-2">
           <div className="pr-12 mb-5">
@@ -237,37 +292,37 @@ export default function Footer() {
       </div>
 
       <div className="w-full bg-white mb-7">
-          <div className="w-[80%] mx-auto lg:flex items-center justify-between py-2">
-            <div className="md:flex items-center md:justify-between gap-4">
-              <Link href="/" className="flex justify-center items-center gap-5">
-                <img
-                  src={IMAGES.mainLogo}
-                  alt="prospera-logo"
-                  fill
-                  className="w-10 h-10 object-contain"
-                />
-                <div className="flex flex-col">
-                  <span className="text-[#800000] font-semibold leading-tight">
-                    Prospera
-                  </span>
-                  <span className="font-semibold text-gray-400 leading-tight">
-                    Hospitality
-                  </span>
-                </div>
-              </Link>
+        <div className="w-[90%] lg:w-[80%] mx-auto flex items-center justify-between py-2">
+          <div className="md:flex items-center md:justify-between gap-4">
+            <Link href="/" className="flex justify-center items-center gap-5">
+              <img
+                src={IMAGES.mainLogo}
+                alt="prospera-logo"
+                fill
+                className="w-10 h-10 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="text-[#800000] font-semibold leading-tight">
+                  Prospera
+                </span>
+                <span className="font-semibold text-gray-400 leading-tight">
+                  Hospitality
+                </span>
+              </div>
+            </Link>
 
-            </div>
-            <div className="flex mt-6 lg:mt-0 justify-between items-center gap-4 text-gray-500">
+          </div>
+          <div className="flex lg:mt-0 justify-between items-center gap-4 text-gray-500">
 
-              <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
-                Let&apos;s Get Started
-              </Button>
-            </div>
+            <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
+              Let&apos;s Get Started
+            </Button>
           </div>
         </div>
+      </div>
 
       <footer className="w-full h-fit relative bg-gray-100 text-gray-500">
-        <div className="w-[80%] mx-auto">
+        <div className="w-[90%] lg:w-[80%] mx-auto">
           {/* <Divider className="w-full" /> */}
 
           <div className="flex w-full mx-auto flex-col lg:flex-row py-5 text-sm">
@@ -275,15 +330,15 @@ export default function Footer() {
               <div className="p-3 px-0 flex flex-col gap-3">
                 <h4 className="font-semibold">Our Office</h4>
                 <p className="text-gray-400 text-sm">
-                Office No.1006
-                Juhi Niharika Mirage, 274, Kopra Rd, Sector 10, Kharghar, Navi Mumbai, Maharashtra 410210.
+                  Office No.1006
+                  Juhi Niharika Mirage, 274, Kopra Rd, Sector 10, Kharghar, Navi Mumbai, Maharashtra 410210.
                 </p>
                 <Link href="https://maps.app.goo.gl/LQZzRHKRaVXkZrc59" passHref target="_blank" className="font-semibold text-themeColor">
                   Locate Us
                 </Link>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Call us</h4>
                 <p className="text-gray-400">
                   Request a quote or just chat about your next vacation
@@ -291,7 +346,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">7977383452</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Write to us</h4>
                 <p className="text-gray-400">
                   Be it an inquiry, feedback, or a simple suggestion.
@@ -301,7 +356,7 @@ export default function Footer() {
                 </Link>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <p className="font-semibold">Connect with us:</p>
                 <div className="flex space-x-4 mt-4 md:mt-0 text-themeColor ">
                   {socialLinks.map((link, index) => (
@@ -328,7 +383,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">Phone no. - +91 70217 19016</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Support</h4>
                 <Link href="mailto:contact@prosperaahospitality.com" className="text-gray-400 text-sm">
                   Email: contact@prosperaahospitality.com
@@ -336,7 +391,7 @@ export default function Footer() {
                 <p className="text-themeColor font-semibold">Phone no. - +91 89281 22610</p>
               </div>
 
-              <div className="p-3 flex flex-col gap-3">
+              <div className="px-0 lg:px-3 p-3 flex flex-col gap-3">
                 <h4 className="font-semibold">Tech Support</h4>
                 <Link href="mailto:tech@prosperaahospitality.com" className="text-gray-400 text-sm">
                   Email: tech@prosperaahospitality.com
@@ -346,7 +401,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full ">
+          <div className="w-full">
             <div className="flex w-full mx-auto flex-col lg:flex-row py-5 lg:py-10 border-b-2 border-gray-300 gap-[0.75rem]">
               <div className="flex-1">
                 <div className="w-full lg:w-[80%] flex flex-col gap-4">
@@ -358,13 +413,14 @@ export default function Footer() {
                     inbox.
                   </p>
 
-                  <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-5">
                     <div>
                       <div className="flex justify-between gap-5 flex-col lg:flex-row">
                         <input
                           type="text"
                           placeholder="Full Name"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           required
                         />
@@ -372,6 +428,7 @@ export default function Footer() {
                           type="email"
                           placeholder="Email ID"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
                         />
@@ -381,21 +438,23 @@ export default function Footer() {
                     <div>
                       <div className="flex justify-between gap-5 flex-col lg:flex-row">
                         <input
-                          type="number"
+                          type="text"
                           placeholder="Phone Number"
                           className="border flex-1 p-3 rounded-xl font-normal"
+                          value={phoneNumber}
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           required
                         />
-                        <button 
-                          type="submit"
+                        <button
+                          type="button"
                           className="border flex-1 p-3 rounded-xl bg-[#800000] text-white font-medium"
+                          onClick={() => handleSubmit()}
                         >
                           Get a call back!
                         </button>
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
 

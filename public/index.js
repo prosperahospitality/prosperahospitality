@@ -18,8 +18,20 @@ const IMAGES = {
     insta8: '/img/insta8.png',
     isologo: '/img/isologo.png',
     ota: '/img/otamanagement.jpeg',
+<<<<<<< HEAD
     profile: '/img/profile.webp',
     testbg: '/img/testbg.svg'
+=======
+    section4: '/img/section4.svg',
+    profile: '/img/profile.webp',
+<<<<<<< HEAD
+    test:'/img/test.jpg',
+    testone:'/img/testone.jpg'
+=======
+    mobilesection4: '/img/mobilesection4.svg',
+    mandalaimg: '/img/mandalaimg.png'
+>>>>>>> 57fe4421133e31c848a354a5729dab8c400c56e2
+>>>>>>> e7d41612cb65ea18fd81e27dea740a9b68568f2a
 }
 
 export default IMAGES;

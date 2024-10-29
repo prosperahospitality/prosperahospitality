@@ -48,13 +48,13 @@ const Revenuefeatures = () => {
 
     return (
         <div className='w-full bg-gray-100 py-14'>
-            <div className='w-[80%] m-auto '>
+            <div className='w-[90%] lg:w-[80%] m-auto '>
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false }}
                     variants={sectionVariants}
-                    className='grid grid-cols-2 gap-6'
+                    className='grid grid-cols-1 md:grid-cols-2 gap-6'
                 >
                     <div className=' flex flex-col gap-8'>
 
@@ -64,7 +64,7 @@ const Revenuefeatures = () => {
 
                         {revenuedata && revenuedata.map((e, i) => (
                             <div key={i} className='p-3 flex flex-col gap-7 bg-white rounded-lg'>
-                                <div className='w-full h-[25rem] relative rounded-lg overflow-hidden'>
+                                <div className='w-full h-[18rem] lg:h-[25rem] relative rounded-lg overflow-hidden'>
                                     <Image
                                         alt="Mountains"
                                         src={e.image}
@@ -76,7 +76,7 @@ const Revenuefeatures = () => {
                                         }}
                                     />
                                 </div>
-                                <div className=' w-full h-28 flex flex-col gap-2 justify-start'>
+                                <div className=' w-full h-auto flex flex-col gap-2 justify-start'>
                                     <h2 className='text-[#800000] text-xl font-bold'>{e.heading}</h2>
                                     <p className='text-gray-600 font-normal'>{e.description}</p>
                                 </div>
@@ -87,7 +87,7 @@ const Revenuefeatures = () => {
                     <div className=' flex flex-col gap-5'>
                         {revenuedataone && revenuedataone.map((e, i) => (
                             <div key={i} className='p-3 flex flex-col gap-7 bg-white rounded-lg'>
-                                <div className='w-full h-[25rem] relative rounded-lg overflow-hidden'>
+                                <div className='w-full h-[18rem] lg:h-[25rem] relative rounded-lg overflow-hidden'>
                                     <Image
                                         alt="Mountains"
                                         src={e.image}
@@ -99,7 +99,7 @@ const Revenuefeatures = () => {
                                         }}
                                     />
                                 </div>
-                                <div className=' w-full h-28 flex flex-col gap-2 justify-start'>
+                                <div className=' w-full h-auto flex flex-col gap-2 justify-start'>
                                     <h2 className='text-[#800000] text-xl font-bold'>{e.heading}</h2>
                                     <p className='text-gray-600 font-normal'>{e.description}</p>
                                 </div>
@@ -110,7 +110,7 @@ const Revenuefeatures = () => {
                             <p className='text-gray-600 font-normal'>Elevate your hotel’s revenue with tailored management solutions.
                                 We optimize OTAs, implement dynamic pricing, and enhance
                                 profitability.</p>
-                            <div className='hidden lg:flex justify-center items-center text-end text-md '>
+                            <div className='lg:flex justify-center items-center text-end text-md '>
                                 <button className='w-full flex gap-2 justify-center items-center px-4 py-2 border rounded-full bg-gradient-to-r from-gray-300 via-gray-500 to-gray-500 text-white font-semibold'
                                 >
                                     Let’s grow your business together <span><MoveUpRight className='size-4' /></span>

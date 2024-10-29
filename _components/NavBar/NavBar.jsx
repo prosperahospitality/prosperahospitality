@@ -18,7 +18,7 @@ const NavBar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle mobile menu
 
   const toggleMobileDropdown = (index) => {
-    setActiveMobileDropdown((prev) => (prev === index ? null : index)); // Toggle mobile dropdown
+    setActiveMobileDropdown((prev) => (prev === index ? null : index));
   };
 
   const isLinkActive = (link) => {
@@ -27,6 +27,11 @@ const NavBar = () => {
     }
     return pathname === link.url;
   };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close the menu
+  };
+
 
   return (
     <div className="h-16 sticky top-0 bg-white z-50">
@@ -69,11 +74,10 @@ const NavBar = () => {
             >
               <Link
                 href={link.url || "#"}
-                className={`p-2 ${
-                  isLinkActive(link)
-                    ? "text-black font-bold"
-                    : "text-gray-500 font-semibold hover:text-black"
-                }`}
+                className={`p-2 ${isLinkActive(link)
+                  ? "text-black font-bold"
+                  : "text-gray-500 font-semibold hover:text-black"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -84,11 +88,10 @@ const NavBar = () => {
                     <Link
                       key={subIndex}
                       href={sublink.url}
-                      className={`block p-2 ${
-                        pathname === sublink.url
-                          ? "text-black font-bold"
-                          : "text-gray-500 font-semibold hover:text-black"
-                      }`}
+                      className={`block p-2 ${pathname === sublink.url
+                        ? "text-black font-bold"
+                        : "text-gray-500 font-semibold hover:text-black"
+                        }`}
                     >
                       {sublink.name}
                     </Link>
@@ -112,29 +115,31 @@ const NavBar = () => {
 
       {/* Mobile menu links (only visible when menu is open) */}
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col items-center bg-white py-4 space-y-4 absolute z-50 top-16  left-0 w-full h-screen">
+        <div className="lg:hidden flex flex-col items-center bg-white py-4 space-y-4 absolute z-50 top-16 left-0 w-full h-screen">
           {links.map((link, index) => (
-            <div key={index} className="relative w-full text-start ">
-              <button
-                onClick={() => toggleMobileDropdown(index)}
-                className={`p-2 w-full text-start px-5 flex justify-between items-center ${
-                  isLinkActive(link)
-                    ? "text-black font-bold"
-                    : "text-gray-500 font-semibold hover:text-black"
-                }`}
-              >
-                {link.name}
-                {/* Chevron icon to indicate open/close state (only for sublinks) */}
-                {link.sublinks && (
+            <div key={index} className="relative w-full text-start">
+              {link.sublinks ? (
+                <button
+                  onClick={() => toggleMobileDropdown(index)}
+                  className={`p-2 w-full text-start px-5 flex justify-between items-center ${isLinkActive(link) ? "text-black font-bold" : "text-gray-500 font-semibold hover:text-black"
+                    }`}
+                >
+                  {link.name}
+                  {/* Chevron icon to indicate open/close state (only for sublinks) */}
                   <span>
-                    {activeMobileDropdown === index ? (
-                      <ChevronUp className="ml-2" />
-                    ) : (
-                      <ChevronDown className="ml-2" />
-                    )}
+                    {activeMobileDropdown === index ? <ChevronUp className="ml-2" /> : <ChevronDown className="ml-2" />}
                   </span>
-                )}
-              </button>
+                </button>
+              ) : (
+                <Link
+                  href={link.url}
+                  onClick={handleLinkClick} // Close the menu and navigate
+                  className={`p-2 w-full text-start px-5 ${pathname === link.url ? "text-black font-bold" : "text-gray-500 font-semibold hover:text-black"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              )}
 
               {/* Mobile Dropdown */}
               {link.sublinks && activeMobileDropdown === index && (
@@ -143,11 +148,9 @@ const NavBar = () => {
                     <Link
                       key={subIndex}
                       href={sublink.url}
-                      className={`block p-2 w-full text-start px-5 ${
-                        pathname === sublink.url
-                          ? "text-black font-bold"
-                          : "text-gray-500 font-semibold hover:text-black"
-                      }`}
+                      onClick={handleLinkClick}
+                      className={`block p-2 w-full text-start px-5 ${pathname === sublink.url ? "text-black font-bold" : "text-gray-500 font-semibold hover:text-black"
+                        }`}
                     >
                       {sublink.name}
                     </Link>
@@ -159,15 +162,13 @@ const NavBar = () => {
 
           {/* Contact button for small devices */}
           <Link href="/contactus" className="w-full flex justify-start pt-5 px-5 ">
-            <Button
-              radius="full"
-              className="bg-[#800000] text-white font-semibold px-4 tracking-wider "
-            >
+            <Button radius="full" className="bg-[#800000] text-white font-semibold px-4 tracking-wider">
               Let’s Get Started!
             </Button>
           </Link>
         </div>
       )}
+
     </div>
   );
 };

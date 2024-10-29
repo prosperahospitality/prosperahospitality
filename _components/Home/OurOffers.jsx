@@ -107,7 +107,7 @@ const OurOffers = () => {
 
     return (
         <div className="w-full flex justify-center items-center">
-            <div className="flex gap-4 lg:gap-8 p-4 w-[90%] lg:w-[80%] lg:justify-center lg:items-center">
+            <div className="flex gap-4 lg:gap-8 p-4 w-[95%] lg:w-[80%] lg:justify-center lg:items-center">
                 <Swiper
                     spaceBetween={20}
                     navigation={{

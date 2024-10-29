@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
                 </div>
 
                 {data.map((item) => (
-                    <div key={item.id} className=" w-[95%] m-auto">
+                    <div key={item.id} className=" w-[90%] lg:w-[80%] m-auto">
                         <div className="mt-5 mb-4">
                             <h3 className="text-xl mb-3 font-extralight text-primary-300">
                                 {item.heading}
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
                 ))}
 
             </div>
-            <div className="w-[95%] m-auto flex gap-5 flex-start mb-6 mt-6">
+            <div className="w-[90%] lg:w-[80%] m-auto flex gap-5 flex-start mb-6 mt-6">
                 <Link href="/tearms-and-conditions" passHref>
                     <div className="flex px-4 py-2 gap:[5px] md:gap-2 border-blue-500 text-blue-500 shadow-2xl border rounded font-semibold tracking-wide hover:bg-blue-500 hover:text-white">
                         Terms & Condition

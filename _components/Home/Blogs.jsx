@@ -40,7 +40,7 @@ const Blogs = () => {
 
     return (
         <div className="w-full flex flex-col gap-8 justify-center items-center">
-            <div className='flex justify-between w-[80%]'>
+            <div className='flex justify-between w-[85%] lg:w-[80%]'>
                 <div className='text-start text-3xl text-gray-600'>
                     <div className=''>Insights to Fuel Your</div>
                     <div className='mt-2'>Growth</div>
@@ -54,7 +54,7 @@ const Blogs = () => {
                 </div>
             </div>
 
-            <div className="hidden lg:flex gap-4 p-4 w-[90%] lg:w-[85%] lg:justify-center lg:items-center">
+            <div className="hidden lg:flex gap-4 p-4 w-[90%] lg:w-[80%] lg:justify-center lg:items-center">
                 {cardData.map((item, index) => (
                     <div key={index} className='flex lg:flex-col w-full justify-center items-center'>
                         <div className='w-full lg:w-[90%] relative'>
@@ -80,7 +80,7 @@ const Blogs = () => {
                 ))}
             </div>
 
-            <div className="lg:hidden w-[90%] p-4">
+            <div className="lg:hidden w-[95%] p-4">
                 <Swiper
                     spaceBetween={20}
                     autoplay={{

@@ -1,13 +1,18 @@
 import Landing from '@/_components/Home/Landing'
 import React from 'react'
 import NumberStats from '@/_components/Home/NumberStats'
-import HomeCards from '@/_components/home/HomeCards'
-import Allpackages from '@/_components/home/Allpackages'
+import HomeCards from '@/_components/Home/HomeCards'
+import Allpackages from '@/_components/Home/Allpackages'
 import OurOffers from '@/_components/Home/OurOffers'
 import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
+<<<<<<< HEAD
 import Testimonial from '@/_components/Testimonial'
+=======
+import Image from 'next/image'
+import IMAGES from '@/public'
+>>>>>>> e7d41612cb65ea18fd81e27dea740a9b68568f2a
 const Home = () => {
 
   const revenuedata = [
