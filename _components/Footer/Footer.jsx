@@ -88,8 +88,8 @@ export default function Footer() {
     <>
 
 
-      <div className="w-[80%] mx-auto mb-16 mt-16">
-        {/* #Mobile View */}
+      {/* <div className="w-[80%] mx-auto mb-16 mt-16">
+       
         <div className="lg:hidden w-full mx-auto mt-4">
           <div className="mt-6 w-full mx-auto">
             <Accordion itemClasses={itemClasses} showDivider={true}>
@@ -165,7 +165,7 @@ export default function Footer() {
         </div>
 
 
-        {/* Offer Card PC*/}
+       
         <div className="hidden lg:block w-full">
           <div className="flex justify-between items-center bg-gray-100 rounded-xl">
 
@@ -189,9 +189,9 @@ export default function Footer() {
 
           </div>
         </div>
-        {/* Offer Card*/}
+     
 
-        {/* Offer Card Mobile*/}
+      
         <div className="block lg:hidden h-full w-full">
           <div className="relative  bg-gray-100 rounded-xl py-4 overflow-hidden w-full h-[40vh] flex justify-center items-end">
 
@@ -219,9 +219,9 @@ export default function Footer() {
 
           </div>
         </div>
-        {/* Offer Card*/}
+    
 
-        {/* # pc view */}
+       
         <div className="hidden lg:grid grid-cols-2 pt-4 gap-2">
           <div className="pr-12 mb-5">
             <h3 className="text-gray-500 font-semibold text-base">
@@ -289,9 +289,9 @@ export default function Footer() {
             </h6>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full bg-white mb-7">
+      <div className="w-full bg-white mb-7 mt-14">
         <div className="w-[90%] lg:w-[80%] mx-auto flex items-center justify-between py-2">
           <div className="md:flex items-center md:justify-between gap-4">
             <Link href="/" className="flex justify-center items-center gap-5">

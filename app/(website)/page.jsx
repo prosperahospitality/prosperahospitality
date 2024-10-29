@@ -8,8 +8,7 @@ import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
 import Testimonial from '@/_components/Testimonial'
-import Image from 'next/image'
-import IMAGES from '@/public'
+
 const Home = () => {
 
   const revenuedata = [
@@ -22,7 +21,7 @@ const Home = () => {
 
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
-      <Landing revenuedata={revenuedata} />
+      <Landing content={revenuedata} />
       <HomeCards />
       <NumberStats />
       <Allpackages />
