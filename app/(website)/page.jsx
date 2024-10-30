@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
-      <Landing revenuedata={revenuedata}/>
+      <Landing content={revenuedata}/>
       <HomeCards />
       <NumberStats />
       <Allpackages />

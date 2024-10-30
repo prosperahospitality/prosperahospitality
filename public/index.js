@@ -21,7 +21,20 @@ const IMAGES = {
     section4: '/img/section4.svg',
     profile: '/img/profile.webp',
     mobilesection4: '/img/mobilesection4.svg',
-    mandalaimg: '/img/mandalaimg.png'
+    mandalaimg: '/img/mandalaimg.png',
+    web1: '/img/web1.avif',
+    web2: '/img/web2.jpg',
+    web3: '/img/web3.avif',
+    section1: '/img/section1.png',
+    card1: '/img/card1.png',
+    card2: '/img/card2.png',
+    card3: '/img/card3.png',
+    card4: '/img/card4.png',
+    icon1: '/img/icon1.png',
+    icon2: '/img/icon2.png',
+    icon3: '/img/icon3.png',
+    icon4: '/img/icon4.png',
+    curvearrow: '/img/curvearrow.png',
 }
 
 export default IMAGES;
