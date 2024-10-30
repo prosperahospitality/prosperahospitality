@@ -1,6 +1,8 @@
 import React from 'react'
 import Landing from '@/_components/Home/Landing'
 import Website from '@/_components/OurServices/Website/Website'
+import Description from '@/_components/OurServices/Website/Description'
+import SDLC from '@/_components/OurServices/Website/SDLC'
 
 const page = () => {
 
@@ -15,7 +17,9 @@ const page = () => {
   return (
     <div>
       <Landing content={websitedata} />
+      <Description />
       <Website />
+      <SDLC />
     </div>
 
   )

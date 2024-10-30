@@ -6,9 +6,9 @@ import IMAGES from "@/public/index";
 const Rm = () => {
     return (
         <div className='w-full'>
-            <div className='w-[90%] lg:w-[80%] m-auto bg-gray-100 rounded-2xl'>
-                <div className='grid grid-cols-2 gap-3 pl-4'>
-                    <div className=' p-3 flex justify-center item-center flex-col gap-10'>
+            <div className='w-[90%] lg:w-[80%] m-auto bg-gray-100 rounded-2xl h-full'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:pl-4'>
+                    <div className='p-3 md:py-6 lg:py-0 lg:p-3 flex justify-center item-center flex-col md:gap-5 gap-10 lg:gap-10'>
                         <h2 className='text-3xl lg:text-5xl font-semibold text-start text-gray-600'>Understand the secret
                             of Growing a Business!</h2>
                         <p className='text-gray-600 font-normal'>Get tips on how to grow your hotel business from the
@@ -22,8 +22,8 @@ const Rm = () => {
                         </div>
                     </div>
 
-                    <div className='flex relative overflow-hidden h-[25rem]' >
-                        <div className='w-[55%] h-[20rem] overflow-hidden rounded-full absolute -bottom-10 -right-10'>
+                    <div className='flex relative overflow-hidden h-[15rem] lg:h-[25rem] md:h-full' >
+                        <div className='w-[65%] md:w-[71%] md:h-[17rem] lg:w-[55%] h-[14rem] lg:h-[20rem] overflow-hidden rounded-full absolute -bottom-10 -right-10'>
                             <Image
                                 alt="Mountains"
                                 src={IMAGES.testone}
@@ -35,7 +35,7 @@ const Rm = () => {
                                 }}
                             />
                         </div>
-                        <div className='w-[68%] h-[24rem] overflow-hidden rounded-full absolute -bottom-[50%] right-[8.4rem]'>
+                        <div className='w-[68%] md:h-[19rem] md:w-[71%] h-[15rem] lg:h-[24rem] overflow-hidden rounded-full absolute -bottom-[50%] right-[3.4rem] md:right-[4.4rem] lg:right-[8.4rem]'>
                             <Image
                                 alt="Mountains"
                                 src={IMAGES.test}
