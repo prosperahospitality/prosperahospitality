@@ -7,10 +7,10 @@ import OurOffers from '@/_components/Home/OurOffers'
 import Blogs from '@/_components/Home/Blogs'
 import InstagramFeed from '@/_components/Home/InstagramFeed'
 import ContactForm from '@/_components/Home/ContactForm'
-import Image from 'next/image'
-import IMAGES from '@/public'
+import Testimonial from '@/_components/Testimonial'
+
 const Home = () => {
-  
+
   const revenuedata = [
     {
       "key": "1",
@@ -29,6 +29,7 @@ const Home = () => {
       <Blogs />
       <InstagramFeed />
       <ContactForm />
+      <Testimonial />
     </div>
   )
 }
