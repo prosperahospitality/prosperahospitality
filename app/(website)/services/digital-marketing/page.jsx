@@ -1,5 +1,9 @@
 import React from 'react'
 import Landing from '@/_components/Home/Landing'
+import Grow from '@/_components/DigitalMarketing/Grow'
+import WhoWeAre from '@/_components/DigitalMarketing/WhoWeAre'
+import HowWeWork from '@/_components/DigitalMarketing/HowWeWork'
+import Process from '@/_components/DigitalMarketing/Process'
 
 const page = () => {
 
@@ -14,6 +18,10 @@ const page = () => {
   return (
     <div className='flex flex-col gap-10 lg:gap-16'>
       <Landing content={revenuedata} />
+      <Grow/>
+      <WhoWeAre/>
+      <HowWeWork/>
+      <Process/>
     </div>
   )
 }

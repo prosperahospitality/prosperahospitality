@@ -88,11 +88,11 @@ export default function Footer() {
     <>
 
 
-      <div className="w-[80%] mx-auto mb-16 mt-16">
+      <div className="w-[90%] lg:w-[80%] mx-auto mb-16 mt-16">
         {/* #Mobile View */}
         <div className="lg:hidden w-full mx-auto mt-4">
           <div className="mt-6 w-full mx-auto">
-            <Accordion itemClasses={itemClasses} showDivider={true}>
+            {/* <Accordion itemClasses={itemClasses} showDivider={true}>
               <AccordionItem
                 key="1"
                 aria-label="Turnaround"
@@ -160,7 +160,7 @@ export default function Footer() {
                 Partner with Prospera to optimize revenue and elevate your
                 brand&apos;s performance
               </AccordionItem>
-            </Accordion>
+            </Accordion> */}
           </div>
         </div>
 
