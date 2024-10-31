@@ -39,7 +39,11 @@ const IMAGES = {
     icon3: '/img/icon3.png',
     icon4: '/img/icon4.png',
     curvearrow: '/img/curvearrow.png',
+    addOne: '/img/add-one.jpg',
+    addTwo: '/img/add-two.jpg',
+    addThree: '/img/add-three.jpg',
     landingBg: '/img/landingBg.svg',
+    
 }
 
 export default IMAGES;
