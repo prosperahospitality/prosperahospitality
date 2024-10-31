@@ -92,7 +92,7 @@ export default function Footer() {
        
         <div className="lg:hidden w-full mx-auto mt-4">
           <div className="mt-6 w-full mx-auto">
-            {/* <Accordion itemClasses={itemClasses} showDivider={true}>
+            <Accordion itemClasses={itemClasses} showDivider={true}>
               <AccordionItem
                 key="1"
                 aria-label="Turnaround"
@@ -162,7 +162,7 @@ export default function Footer() {
               </AccordionItem>
             </Accordion> 
            </div> 
-         </div> */}
+         </div>
 
         <div className="hidden lg:block w-full">
           <div className="flex justify-between items-center bg-gray-100 rounded-xl">
