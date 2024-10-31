@@ -24,7 +24,7 @@ const SuccessStories = () => {
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
     },
     {
-      name: 'Sameer Shaikh',
+      name: 'Rohit Gawade',
       title: 'Backend Developer',
       image: IMAGES.profile,
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
