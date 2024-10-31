@@ -160,15 +160,12 @@ export default function Footer() {
                 Partner with Prospera to optimize revenue and elevate your
                 brand&apos;s performance
               </AccordionItem>
-            </Accordion> */}
-          </div>
-        </div>
+            </Accordion> 
+           </div> 
+         </div> */}
 
-
-       
         <div className="hidden lg:block w-full">
           <div className="flex justify-between items-center bg-gray-100 rounded-xl">
-
             <div className="w-[70%] pl-8">
               <div className="text-7xl font-semibold text-[#800000]">40% 0ff</div>
               <div className="text-xl mt-3 font-medium  text-gray-600 gap-2"><span className="pr-2">This Diwali get</span><Button isIconOnly className="rounded-full bg-white h-8 w-5"><ArrowUpRight className="h-5" /></Button></div>
