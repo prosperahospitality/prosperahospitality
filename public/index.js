@@ -39,6 +39,7 @@ const IMAGES = {
     icon3: '/img/icon3.png',
     icon4: '/img/icon4.png',
     curvearrow: '/img/curvearrow.png',
+    landingBg: '/img/landingBg.svg',
 }
 
 export default IMAGES;
