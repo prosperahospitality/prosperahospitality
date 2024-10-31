@@ -36,7 +36,6 @@ export const siteConfig = {
     PrivacyPolicy: "Privacy Policy",
     RefundPolicy: "Refund Policy",
   
-  
     keywords: [
       "Prospera",
       "Prospera Hospitality",
@@ -224,8 +223,8 @@ export const siteConfig = {
         href: "/pricing",
       },
       {
-        label: "Success Stories",
-        href: "/success-stories",
+        label: "Testimonials",
+        href: "/testimonials",
       },
       {
         label: "Vacation Rental",

@@ -10,7 +10,7 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
 
-const SuccessStories = () => {
+const TestimonialsstepsStories = () => {
 
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -131,4 +131,4 @@ const SuccessStories = () => {
   )
 }
 
-export default SuccessStories
+export default TestimonialsstepsStories
