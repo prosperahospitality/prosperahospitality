@@ -28,8 +28,8 @@ const Home = () => {
       <OurOffers />
       <Blogs />
       <InstagramFeed />
-      <ContactForm />
       <Testimonial />
+      <ContactForm />
     </div>
   )
 }

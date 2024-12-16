@@ -1,5 +1,5 @@
-import db from "@/lib/mongoDB";
-import { prosperajob } from "@/lib/model/job/job"
+import db from "@/_lib/mongoDB";
+import { prosperajob } from "@/_lib/model/job/job"
 import { NextResponse } from "next/server";
 
 

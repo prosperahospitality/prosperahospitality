@@ -1,9 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 import Landing from '@/_components/Home/Landing'
-import TestimonialsstepsStories from '@/_components/Testimonials/TestimonialsstepsStories'
-import Testimonialssteps from '@/_components/Testimonials/Testimonialssteps'
+// import TestimonialsstepsStories from '@/_components/Testimonials/TestimonialsstepsStories'
+// import Testimonialssteps from '@/_components/Testimonials/Testimonialssteps'
+import TestCard from '@/_components/Testimonials/Testimonials'
 
-const testimonials = () => {
+const TestimonialsPage = () => {
 
   const revenuedata = [
     {
@@ -13,15 +15,34 @@ const testimonials = () => {
     }
   ]
 
+  const [packageReviews, setPackageReviews] = useState([]);
+
+  useEffect(() => {
+    const abc = async () => {
+
+      const response1 = await fetch(`/api/reviewApi`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result1 = await response1.json();
+
+      setPackageReviews(result1.result)
+    };
+
+    abc();
+  }, []);
+
   return ( 
     <div className='flex flex-col gap-10 lg:gap-16'>
       <Landing content={revenuedata} />
-      <Testimonialssteps />
-      <TestimonialsstepsStories />
+      <TestCard packageReviews={packageReviews} />
+      {/* <Testimonialssteps /> */}
     </div>
   )
 }
 
-export default testimonials
+export default TestimonialsPage
 
 

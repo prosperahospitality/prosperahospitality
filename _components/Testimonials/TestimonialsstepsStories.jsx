@@ -90,7 +90,7 @@ const TestimonialsstepsStories = () => {
                 <SwiperSlide key={index} className='shadow-[0px_1px_3px_0px_rgba(0,0,0,0.02),_0px_0px_0px_1px_rgba(27,31,35,0.15)] rounded-2xl w-full h-full flex justify-center items-center p-5 my-5'>
                   <div className="w-full flex flex-col gap-5">
                     <div className='text-gray-600 font-normal'>
-                      <p>"{testimonial.text}"</p>
+                      <p>{`"${testimonial.text}"`}</p>
                     </div>
                     <div className="flex justify-start gap-4 items-center">
                       <div className="border border-black size-16 rounded-full overflow-hidden">

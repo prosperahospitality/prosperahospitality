@@ -19,15 +19,6 @@ export async function POST(request) {
   if (payload.operation === "homeContact") {
     try {
 
-      const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      };
-
-      if (!validateEmail(payload.formValues.email)) {
-        return NextResponse.json({ status: 401, message: 'Invalid email address' });
-      }
-
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
@@ -51,7 +42,6 @@ export async function POST(request) {
       return NextResponse.json({ status: 200, message: "Email sent and enquiry saved successfully" });
 
     } catch (error) {
-      console.error("Error::::::>", error);
       return NextResponse.json({ success: true, message: 'Error sending email or saving enquiry' }, { status: 500 });
     }
   } else if (payload.operation === "footercontact") {
@@ -84,6 +74,61 @@ export async function POST(request) {
 
     } catch (error) {
       console.error("Error::::::>", error);
+      return NextResponse.json({ success: true, message: 'Error sending email or saving enquiry' }, { status: 500 });
+    }
+  } else if (payload.operation === "contactUs") {
+    try {
+
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        subject: 'You received an enquiry from Prospera Hospitality',
+        html: `
+          <h2>Contact Form Details</h2>
+          <ul>
+            <li><strong>Full Name:</strong> ${payload.formValues.name}</li>
+            <li><strong>Email:</strong> ${payload.formValues.email}</li>
+            <li><strong>Phone Number:</strong> ${payload.formValues.number}</li>
+            <li><strong>Company Name:</strong> ${payload.formValues.organization}</li>
+          </ul>
+        `,
+      });
+
+
+      return NextResponse.json({ status: 200, message: "Email sent and enquiry saved successfully" });
+
+    } catch (error) {
+      console.error("Error::::::>", error);
+      return NextResponse.json({ success: true, message: 'Error sending email or saving enquiry' }, { status: 500 });
+    }
+  } else if(payload.operation === "jobContact") {
+    try {
+
+      const jobdetails = payload.selectedData;
+
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        subject: 'You received an job enquiry from Prospera Hospitality',
+        html: `
+          <h2>Contact Form Details</h2>
+          <ul>
+            <li><strong>Full Name:</strong> ${payload.formValues.fullName}</li>
+            <li><strong>Email:</strong> ${payload.formValues.email}</li>
+            <li><strong>State:</strong> ${payload.formValues.selectedState}</li>
+            <li><strong>City:</strong> ${payload.formValues.selectedCity}</li>
+            <li><strong>Phone Number:</strong> ${payload.formValues.phoneNumber}</li>
+            <li><strong>Job Title:</strong> ${jobdetails.title}</li>
+            <li><strong>Job Location:</strong> ${jobdetails.location}</li>
+            <li><strong>Job experience:</strong> ${jobdetails.experience}</li>
+          </ul>
+        `,
+      });
+
+
+      return NextResponse.json({ status: 200, message: "Email sent and enquiry saved successfully" });
+
+    } catch (error) {
       return NextResponse.json({ success: true, message: 'Error sending email or saving enquiry' }, { status: 500 });
     }
   }

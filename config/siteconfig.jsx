@@ -212,7 +212,7 @@ export const siteConfig = {
       },
       {
         label: "About Us",
-        href: "/about-us",
+        href: "/aboutus",
       },
       {
         label: "Our Services",
@@ -236,7 +236,7 @@ export const siteConfig = {
       },
       {
         label: "Careers",
-        href: "/careers",
+        href: "/career",
       },
       {
         label: "Blog",

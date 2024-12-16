@@ -43,7 +43,18 @@ const IMAGES = {
     addTwo: '/img/add-two.jpg',
     addThree: '/img/add-three.jpg',
     landingBg: '/img/landingBg.svg',
-    
+    dynamicworkenviron: '/img/dynamicworkenviron.avif',
+    empowerment: '/img/empowerment.avif',
+    inclusive: '/img/inclusive.jpg',
+    vision: '/img/vision.jpg',
+    teamwork: '/img/teamwork.jpg',
+    learning: '/img/learning.jpg',
+    innovation: '/img/innovation.jpg',
+    worklife: '/img/worklife.jpg',
+    sustainablity: '/img/sustainablity.jpg',
+    global: '/img/global.avif',
+    testimonialsbg: '/img/testimonialsbg.jpg',
+    Adminloginbg:'/img/Adminloginbg.jpg',
 }
 
 export default IMAGES;

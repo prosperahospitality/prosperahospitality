@@ -1,5 +1,5 @@
-import db from "@/lib/mongoDB";
-import { prosperablog } from "@/lib/model/blog/blog";
+import db from "@/_lib/mongoDB";
+import { prosperablog } from "@/_lib/model/blog/blog";
 import { NextResponse } from "next/server";
 import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";

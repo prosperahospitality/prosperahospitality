@@ -3,9 +3,12 @@ import IMAGES from '@/public';
 import { MoveUpRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation';
 
 const Allpackages = () => {
-    const [activeButton, setActiveButton] = useState(0); // Initial button active
+    const [activeButton, setActiveButton] = useState(0);
+
+    const router = useRouter();
 
     // Variants for sections and image transitions
     const sectionVariants = {
@@ -33,10 +36,25 @@ const Allpackages = () => {
         { id: 2, heading: 'Digital Marketing', content: 'Our digital marketing services boost your hotel’s visibility through targeted SEO, social media, and online advertising.', image: IMAGES.digitalmarketing },
     ];
 
-    // Updated handleClick function to keep a button always active
     const handleClick = (buttonId) => {
-        setActiveButton(buttonId); // Always set clicked button as active
+        setActiveButton(buttonId);
     };
+
+    const handleLink = (id) => {
+
+        if(id === 0) {
+            router.push(`/services/revenue-management`)
+        }
+        
+        if(id === 1) {
+            router.push(`/services/web-development`)
+        } 
+        
+        if(id === 2) {
+            router.push(`/services/digital-marketing`)
+        }
+        
+    }
 
     return (
         <div className='flex flex-col gap-10'>
@@ -85,7 +103,7 @@ const Allpackages = () => {
                                         ))}
                                     </div>
                                     <p>{content}</p>
-                                    <button className='flex gap-2 justify-center items-center px-4 py-2 border rounded-full bg-gradient-to-r from-gray-300 via-gray-500 to-gray-500 text-white font-semibold'>
+                                    <button className='flex gap-2 justify-center items-center px-4 py-2 border rounded-full bg-gradient-to-r from-gray-300 via-gray-500 to-gray-500 text-white font-semibold' onClick={(e) => handleLink(id)}>
                                         Explore More <span><MoveUpRight className='size-4' /></span>
                                     </button>
                                 </div>

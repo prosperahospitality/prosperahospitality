@@ -83,7 +83,7 @@ const NavBar = () => {
               </Link>
 
               {link.sublinks && activeDropdown === index && (
-                <div className="absolute left-0 top-full mt-1 bg-white shadow-lg p-2">
+                <div className="absolute left-0 top-full mt-1 bg-white shadow-lg p-2 w-[215px]">
                   {link.sublinks.map((sublink, subIndex) => (
                     <Link
                       key={subIndex}
@@ -102,8 +102,7 @@ const NavBar = () => {
           ))}
         </div>
 
-        {/* Contact button for large devices */}
-        <Link href="/contactus" className="hidden lg:flex">
+        <Link href="/contact-us" className="hidden lg:flex">
           <Button
             radius="full"
             className="bg-[#800000] text-white font-semibold px-4 tracking-wider "
@@ -161,7 +160,7 @@ const NavBar = () => {
           ))}
 
           {/* Contact button for small devices */}
-          <Link href="/contactus" className="w-full flex justify-start pt-5 px-5 ">
+          <Link href="/contact-us" className="w-full flex justify-start pt-5 px-5 ">
             <Button radius="full" className="bg-[#800000] text-white font-semibold px-4 tracking-wider">
               Let’s Get Started!
             </Button>
@@ -178,6 +177,7 @@ export default NavBar;
 const links = [
   {
     name: "Our Services",
+    url: "/services",
     sublinks: [
       { name: "Web Development", url: "/services/web-development" },
       { name: "Digital Marketing", url: "/services/digital-marketing" },

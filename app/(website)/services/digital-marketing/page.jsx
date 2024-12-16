@@ -1,9 +1,9 @@
 import React from 'react'
 import Landing from '@/_components/Home/Landing'
-import Grow from '@/_components/DigitalMarketing/Grow'
-import WhoWeAre from '@/_components/DigitalMarketing/WhoWeAre'
-import HowWeWork from '@/_components/DigitalMarketing/HowWeWork'
-import Process from '@/_components/DigitalMarketing/Process'
+import Grow from '@/_components/OurServices/DigitalMarketing/Grow'
+import WhoWeAre from '@/_components/OurServices/DigitalMarketing/WhoWeAre'
+import HowWeWork from '@/_components/OurServices/DigitalMarketing/HowWeWork'
+import Process from '@/_components/OurServices/DigitalMarketing/Process'
 
 const page = () => {
 

@@ -311,11 +311,14 @@ export default function Footer() {
             </Link>
 
           </div>
-          <div className="flex lg:mt-0 justify-between items-center gap-4 text-gray-500">
+          <div className="flex lg:mt-0 justify-between items-center gap-4 text-gray-500 ">
 
-            <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
-              Let&apos;s Get Started
-            </Button>
+            <Link href="/contact-us" className="flex">
+              <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="full" size="md">
+                Let&apos;s Get Started
+              </Button>
+            </Link>
+
           </div>
         </div>
       </div>
