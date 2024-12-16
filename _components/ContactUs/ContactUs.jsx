@@ -5,7 +5,7 @@ import {
   TwitterIcon,
   LinkedinBlack,
   InstagramBlack,
-} from "@/_components/icons";
+} from "@/_components/Icons";
 import { Button, Input } from "@nextui-org/react";
 import { motion } from "framer-motion";
 

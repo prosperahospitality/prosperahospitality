@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { siteConfig } from "@/config/siteconfig";
 import { Input, User, Popover, PopoverTrigger, PopoverContent, Tooltip, Badge, Button } from "@nextui-org/react";
 // import { ThemeSwitch } from "@/app/_components/ui/ThemeSwitch";
-import { CompanyDashLogo, NotificationIcon } from "@/_components/icons";
+import { CompanyDashLogo, NotificationIcon } from "@/_components/Icons";
 import Link from 'next/link';
 import { button as buttonStyles } from "@nextui-org/theme";
 import { Search, KeyRound, Settings, Power, Mail, MessageCircleMore, MessageCircleQuestion } from 'lucide-react'
