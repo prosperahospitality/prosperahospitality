@@ -1,8 +1,24 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Button } from "@nextui-org/button";
 import Image from 'next/image';
+import ContactModal from '@/_components/OurServices/ContactModal';
+import { ArrowRight } from "lucide-react"
+import { useRouter } from 'next/navigation';
 
 const OurServices = () => {
+
+  const router = useRouter()
+
+  const [modalClicked, setModalClicked] = useState(false);
+
+  const [serviceClicked, setServiceClicked] = useState(false);
+
+  const handleModal = (service) => {
+    setModalClicked(true)
+    setServiceClicked(service)
+  }
+
   return (
     <div className="w-full flex justify-center items-center mt-16">
       <div className="flex flex-col justify-center items-center lg:w-[80%] w-[90%] gap-16">
@@ -15,8 +31,8 @@ const OurServices = () => {
               In todays world everyone is behind making their own brand and known brand is nothing but an asset for them and the whole valuation stand on the brand name. With lot of companies entering the Hospitality space promising huge gross turn over under their brand but at the same time a hotel loses this own identity and struggle to make this name in the market due to lack expertise and revenue generating methods.
             </p>
             <p>
-              Bigfoot Hospitality help hotels to make their own brand by staying at the backend and bringing hotel brand in the front by delivering exceptional services which a hotel needs to build their own brand. So why tie up with hotel chains or any company who promises you to generate revenue for you through their brand.
-              Build your own brand through Bigfoot Hospitality.
+              Prospera Hospitality help hotels to make their own brand by staying at the backend and bringing hotel brand in the front by delivering exceptional services which a hotel needs to build their own brand. So why tie up with hotel chains or any company who promises you to generate revenue for you through their brand.
+              Build your own brand through Prospera Hospitality.
             </p>
           </div>
           <div className='col-span-1'>
@@ -54,6 +70,9 @@ const OurServices = () => {
             <p>
               A robust revenue management strategy is indispensable to a hotel’s success. Our revenue management team, encompassing professionals with years of experience in revenue management, helps your hotel balance demand and inventory by forecasting the right price for the potential guests. Our data-driven approach helps you achieve the best commission efficiency while allowing your staff to manage the business, effectively and effortlessly.
             </p>
+            <div className='w-full flex justify-center items-center'>
+              <Button className='rounded-full bg-gray-200 text-[#800000] text-center' onClick={(e) => router.push(`/services/revenue-management`)}>Know more<ArrowRight /></Button>
+            </div>
           </div>
         </div>
 
@@ -66,8 +85,11 @@ const OurServices = () => {
               Gain a 360-degree visibility on social media
             </p>
             <p>
-              As millennials are fast moving to the social media channels, hotels can’t afford to miss this opportunity to market their brand on these channels. We also find that a large chunk of the hotels has little or no idea about social media. You will be surprised to know most of your bookings could come from these social media channels. Helmed by social media professionals with years of experience in managing online brand presence at the best hotel marketing company in Mumbai, Bigfoot Hospitality can help you create and manage organic and paid social media campaigns across channels.
+              As millennials are fast moving to the social media channels, hotels can’t afford to miss this opportunity to market their brand on these channels. We also find that a large chunk of the hotels has little or no idea about social media. You will be surprised to know most of your bookings could come from these social media channels. Helmed by social media professionals with years of experience in managing online brand presence at the best hotel marketing company in Mumbai, Prospera Hospitality can help you create and manage organic and paid social media campaigns across channels.
             </p>
+            <div className='w-full flex justify-center items-center mt-4'>
+              <Button className='rounded-full bg-gray-200 text-[#800000] text-center' onClick={(e) => router.push(`/services/digital-marketing`)}>Know more<ArrowRight /></Button>
+            </div>
           </div>
           <div className='col-span-1'>
             <div className='relative w-full h-full justify-items-center'>
@@ -103,7 +125,7 @@ const OurServices = () => {
               Focus on your serving your guests while we manage your front office.
             </p>
             <p>
-              Bigfoot Hospitality provides virtual office services to clients who wish to outsource their front office administration to make their work easier. Under these services, we provide highly skilled staff with decent communication skills to handle reservation of hotel rooms and tables. The team also follows up with business leads via multiple communication channels such as calls, emails and social media.
+              Prospera Hospitality provides virtual office services to clients who wish to outsource their front office administration to make their work easier. Under these services, we provide highly skilled staff with decent communication skills to handle reservation of hotel rooms and tables. The team also follows up with business leads via multiple communication channels such as calls, emails and social media.
             </p>
           </div>
         </div>
@@ -131,6 +153,10 @@ const OurServices = () => {
             <p>
               We have an army of SEO specialists who regularly optimize your website to incorporate the latest SEO trends. This helps your brand maintain its consistency in visibility across channels.
             </p>
+
+            <div className='w-full flex justify-center items-center mt-4'>
+              <Button className='rounded-full bg-gray-200 text-[#800000] text-center' onClick={(e) => router.push(`/services/web-development`)}>Know more<ArrowRight /></Button>
+            </div>
           </div>
           <div className='col-span-1'>
             <div className='relative w-full h-full justify-items-center'>
@@ -174,9 +200,9 @@ const OurServices = () => {
         <div className='flex flex-col justify-center items-center w-full'>
           <div className='flex flex-col justify-center items-center w-[50%] gap-2'>
             <p className='text-center font-semibold text-2xl text-[#800000]'>Hospitality Consultancy</p>
-            <p className='text-gray-700'>If you’re interested in enhancing your next trip with an exciting and engaging tour, look no further. Check out my current tours and feel free to get in touch with any questions you may have about what I offer.</p>
+            <p className='text-gray-700'>If you’re interested in enhancing your hotels visibility into a best possible way, look no further. Check out our services and feel free to get in touch with any questions you may have about what we offer.</p>
             <div className='mt-1'>
-              <Button className='bg-gray-300 text-[#800000] hover:drop-shadow-2xl'>Contact us</Button>
+              <Button className='bg-gray-300 text-[#800000] hover:drop-shadow-2xl' onClick={(e) => handleModal("All Services")}>Contact us</Button>
             </div>
           </div>
 
@@ -185,6 +211,9 @@ const OurServices = () => {
 
 
       </div>
+
+      <ContactModal modalClicked={modalClicked} onCloseClicked={(val) => setModalClicked(!val)} serviceClicked={serviceClicked} />
+
     </div>
   )
 }

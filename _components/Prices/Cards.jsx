@@ -1,7 +1,9 @@
+"use client"
 import IMAGES from '@/public'
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
+import ContactModal from '@/_components/Prices/ContactModal';
 
 const CardData = [
     {
@@ -22,6 +24,16 @@ const CardData = [
 ];
 
 const Cards = () => {
+
+      const [modalClicked, setModalClicked] = useState(false);
+    
+      const [serviceClicked, setServiceClicked] = useState('Standard');
+    
+      const handleModal = (service) => {
+        setModalClicked(true)
+        setServiceClicked(service)
+      }
+
     return (
         <div className='flex flex-col justify-center items-center gap-10'>
             <div className='w-[90%] lg:w-[80%] mx-auto'>
@@ -48,13 +60,16 @@ const Cards = () => {
                                 <h3 className="text-xl font-medium">{item.title}</h3>
                                 <p className="text-gray-600 text-sm">{item.para}</p>
                             </div>
-                            <button className='flex justify-center items-center gap-2 w-[50%] p-3 border text-[#800000] border-[#800000] hover:bg-[#800000] text-sm font-semibold hover:text-white rounded-xl'>Contact Now
+                            <button className='flex justify-center items-center gap-2 w-[50%] p-3 border text-[#800000] border-[#800000] hover:bg-[#800000] text-sm font-semibold hover:text-white rounded-xl' onClick={(e) => handleModal(item.title)}>Contact Now
                                 <span><MoveUpRight className='size-4' /></span>
                             </button>
                         </div>
                     </div>
                 ))}
             </div>
+
+            <ContactModal modalClicked={modalClicked} onCloseClicked={(val) => setModalClicked(!val)} serviceClicked={serviceClicked} />
+
         </div>
     )
 }

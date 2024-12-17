@@ -3,8 +3,8 @@ import Landing from '@/_components/Home/Landing'
 import Prices from '@/_components/Prices/Prices'
 import Cards from '@/_components/Prices/Cards'
 import Accordian from '@/_components/Prices/Accordian'
-import Rm from '@/_components/OurServices/RevenueManagement/Rm'
-import Offer from '@/_components/Prices/Offer'
+import Rm from '@/_components/Prices/Rm'
+// import Offer from '@/_components/Prices/Offer'
 
 const prices = () => {
 

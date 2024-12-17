@@ -1,7 +1,19 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { KeyRound, ShieldCheck, ChartNoAxesCombined, Phone, ChevronRight } from "lucide-react"
+import ContactModal from '@/_components/VacationRental/ContactModal'
+
 
 const Services = () => {
+
+    const [modalClicked, setModalClicked] = useState(false);
+
+    const [serviceClicked, setServiceClicked] = useState(false);
+
+    const handleModal = (service) => {
+        setModalClicked(true)
+        setServiceClicked(service)
+    }
 
     const services = [
         {
@@ -99,11 +111,14 @@ const Services = () => {
 
                     </div>
                     <div className='flex justify-start items-start text-start mt-16'>
-                        <button type="button" className="text-white bg-[#800000] hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 inline-flex justify-center items-center">Contact Us <ChevronRight className='text-white size-5'/></button>
+                        <button type="button" className="text-white bg-[#800000] hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 inline-flex justify-center items-center" onClick={(e) => handleModal("Vacation Rental")}>Contact Us <ChevronRight className='text-white size-5' /></button>
                     </div>
                 </div>
 
             </div>
+
+            <ContactModal modalClicked={modalClicked} onCloseClicked={(val) => setModalClicked(!val)} serviceClicked={serviceClicked} />
+
         </div>
     )
 }

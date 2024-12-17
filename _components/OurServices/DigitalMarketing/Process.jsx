@@ -12,28 +12,36 @@ const Process = () => {
                     </div>
                     <div className='w-full grid grid-cols-2 gap-5'>
                         <div className='p-5 h-52 bg-white border shadow-xl rounded-xl flex flex-col justify-between gap-2'>
-                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>image</div>
+                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>
+                                <img src="/img/google.webp" className='h-[6rem] w-[6rem]' alt='google' />
+                            </div>
                             <div className="flex flex-col gap-1 w-full">
                                 <h2 className='text-xl font-semibold text-[#800000] text-center'>Google Ads</h2>
                                 <p className="text-xs md:text-sm text-gray-500 text-center">Reach Customers Actively Searching</p>
                             </div>
                         </div>
                         <div className='p-5 h-52 bg-white border shadow-xl rounded-xl flex flex-col justify-between gap-2'>
-                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>image</div>
+                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>
+                                <img src="/img/meta.png" className='h-[6rem] w-[6rem]' alt='meta' />
+                            </div>
                             <div className="flex flex-col gap-1 w-full">
                                 <h2 className='text-xl font-semibold text-[#800000] text-center'>Meta Ads</h2>
                                 <p className="text-xs md:text-sm text-gray-500 text-center">Engage Audiences Where They Connect</p>
                             </div>
                         </div>
                         <div className='p-5 h-52 bg-white border shadow-xl rounded-xl flex flex-col justify-between gap-2'>
-                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>image</div>
+                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>
+                                <img src="/img/amazon.jpg" className='h-[6rem] w-[8rem]' alt='amazon' />
+                            </div>
                             <div className="flex flex-col gap-1 w-full">
                                 <h2 className='text-xl font-semibold text-[#800000] text-center'>Amazon Ads</h2>
                                 <p className="text-xs md:text-sm text-gray-500 text-center">Drive Conversions on the World’s Largest Marketplace</p>
                             </div>
                         </div>
                         <div className='p-5 h-52 bg-white border shadow-xl rounded-xl flex flex-col justify-between gap-2'>
-                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>image</div>
+                            <div className='border h-full w-full rounded-xl flex justify-center items-center'>
+                                <img src="/img/linked.png" className='h-[4rem] w-[4rem]' alt='linked' />
+                            </div>
                             <div className="flex flex-col gap-1 w-full">
                                 <h2 className='text-xl font-semibold text-[#800000] text-center'>LinkedIn Ads</h2>
                                 <p className="text-xs md:text-sm text-gray-500 text-center">Connect with Professionals and Decision-Makers</p>

@@ -17,32 +17,60 @@ export default function InstagramReels({ }) {
 
     const testimonials = [
         {
-            name: 'Ankit Singh',
-            title: 'Frontend Developer',
+            name: 'Greenwood Residency, Shimla, Himachal Pradesh',
+            title: 'Rohit Mehra',
             rating: 4,
             image: IMAGES.profile,
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
+            text: 'Prospera Hospitality has transformed our online presence! Our hotel bookings have surged after they listed us on top booking platforms, and the custom website they designed is both elegant and functional. Great team to work with!',
         },
         {
-            name: 'John Doe',
-            title: 'Backend Developer',
+            name: 'Ocean Pearl Resort, Nagoan, Alibaug',
+            title: 'Pooja Nair',
             rating: 5,
             image: IMAGES.profile,
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
+            text: `From day one, Prospera Hospitality impressed us with their professionalism and expertise. The website they built for us is user-friendly and visually appealing. Our visibility has improved, and we've seen a notable increase in direct bookings.`,
         },
         {
-            name: 'Avi Thrat',
-            title: 'Frontend Developer',
+            name: 'Royal Heritage Inn, Jaipur, Rajasthan',
+            title: 'Vikram Singh',
             rating: 4,
             image: IMAGES.profile,
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
+            text: `We were struggling to get online bookings, but thanks to Prospera Hospitality's listing services and custom website, our hotel now receives consistent reservations. Their team made the process seamless!`,
         },
         {
-            name: 'Dawood Mukadam',
-            title: 'Backend Developer',
+            name: 'Tranquil Lake View, Munnar, Kerala',
+            title: 'Sneha Iyer',
             rating: 5,
             image: IMAGES.profile,
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil repellendus itaque odio fuga excepturi illum quae veniam quibusdam, sint rem hic obcaecati et temporibus aliquid doloribus eveniet omnis molestiae?',
+            text: 'Choosing Prospera Hospitality was the best decision for our hotel business. Our visibility on booking platforms has skyrocketed, and the website they developed has a modern, clean look that our guests love.',
+        },
+        {
+            name: 'Blossom Boutique Stay, Pune, Maharashtra',
+            title: 'Rahul Patil',
+            rating: 5,
+            image: IMAGES.profile,
+            text: `Prospera Hospitality delivered beyond our expectations. They made our hotel stand out on booking platforms and developed a stunning custom website. We've seen more bookings and happier guests!`,
+        },
+        {
+            name: 'Sunrise Hill Retreat, Manali, Himachal Pradesh',
+            title: 'Kavita Joshi',
+            rating: 5,
+            image: IMAGES.profile,
+            text: `The team at Prospera Hospitality is truly exceptional. They listed our hotel across major booking websites, and the custom website they created has helped us build our direct customer base. Highly recommended!`,
+        },
+        {
+            name: 'Lotus Grand Hotel, Varanasi, Uttar Pradesh',
+            title: 'Suresh Gupta',
+            rating: 5,
+            image: IMAGES.profile,
+            text: `Prospera Hospitality knows the hospitality industry inside out. Their custom website for our hotel is sleek and easy to navigate. Combined with their online booking strategy, our business has grown tremendously!`,
+        },
+        {
+            name: 'Palm Grove Hotel, Hyderabad, Telangana',
+            title: 'Deepa Reddy',
+            rating: 5,
+            image: IMAGES.profile,
+            text: `Our experience with Prospera Hospitality has been phenomenal. The website they developed is a true reflection of our hotel’s personality, and their expertise in listing services has improved our occupancy rate.`,
         },
 
     ];
@@ -95,7 +123,7 @@ export default function InstagramReels({ }) {
                                                 <div className="flex justify-end items-center w-full py-5">
                                                     <div className="w-[65%] flex flex-col">
                                                         <h2 className="text-xl font-semibold text-[#800000]">{testimonial.title}</h2>
-                                                        <span className='text-sm text-gray-400'>{testimonial.title}</span>
+                                                        <span className='text-sm text-gray-400'>{testimonial.name}</span>
                                                         <div className='flex gap-1'>
                                                             {[...Array(5)].map((_, i) => (
                                                                 <span key={i}>

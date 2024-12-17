@@ -216,7 +216,7 @@ export const siteConfig = {
       },
       {
         label: "Our Services",
-        href: "/our-services",
+        href: "/services",
       },
       {
         label: "Pricing",
@@ -240,7 +240,7 @@ export const siteConfig = {
       },
       {
         label: "Blog",
-        href: "/blog",
+        href: "/blogs",
       },
     ],
   

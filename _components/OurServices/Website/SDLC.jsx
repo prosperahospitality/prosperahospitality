@@ -128,7 +128,7 @@ const SDLC = () => {
                         <div className='flex relative w-[80px] h-[80px] md:w-[100px] md:h-[100px] justify-center items-center'>
                             <Image
                                 alt="development"
-                                src={IMAGES.icon4} // Replace with appropriate image
+                                src={IMAGES.icon4}
                                 fill
                                 quality={100}
                                 className='object-scale-down'

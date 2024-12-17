@@ -6,13 +6,21 @@ import {
     ModalBody,
     ModalFooter,
     useDisclosure,
-    Input, Select, SelectItem
+    Input, Select, SelectItem, Spinner
 } from '@nextui-org/react'
 import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2';
 import statesWithCities from '@/_lib/locations'
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { storage } from "@/app/config";
 
 const Openings = () => {
+
+    const [file, setFile] = useState(null);
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const [downloadURL, setDownloadURL] = useState();
 
     const stateNames = statesWithCities.map((stateObj) => stateObj.state);
 
@@ -34,6 +42,7 @@ const Openings = () => {
         selectedState: '',
         selectedCity: '',
         phoneNumber: '',
+        resumeLink: '',
     });
 
     const handleSelectionChange = (e) => {
@@ -96,7 +105,10 @@ const Openings = () => {
 
             const { icon, ...rest } = selectedData;
 
-            const response = await fetch('/api/send-email', {
+            setIsLoading(true)
+
+
+            const response1 = await fetch('/api/enquiries/jobenquiry', {
 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -107,7 +119,39 @@ const Openings = () => {
                 }),
             });
 
+            const result1 = await response1.json();
+
+            console.log("REsult:::::::::::>", result1)
+
+            const url = await handleUpload(result1.result._id);
+
+            const response2 = await fetch('/api/enquiries/jobenquiry', {
+
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    operation: "jobContactUpdate",
+                    id: result1.result._id,
+                    url: url
+                }),
+            });
+
+            const result2 = await response2.json();
+
+            const response = await fetch('/api/send-email', {
+
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    operation: "jobContact",
+                    formValues: formValues,
+                    selectedData: rest,
+                    url: url,
+                }),
+            });
+
             if (response.ok) {
+                setIsLoading(false)
                 Swal.fire({
 
                     title: "Form submitted successfully!",
@@ -121,6 +165,15 @@ const Openings = () => {
                     setApplyClicked(false)
 
                     setSelectedData({})
+
+                    setFormValues({
+                        fullName: '',
+                        email: '',
+                        selectedState: '',
+                        selectedCity: '',
+                        phoneNumber: '',
+                        resumeLink: '',
+                    })
 
                 });
             } else {
@@ -138,6 +191,48 @@ const Openings = () => {
             [name]: value,
         }));
     };
+
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+    };
+
+    const handleUpload = (id) => {
+        return new Promise((resolve, reject) => {
+            if (!file) {
+                reject("No file to upload");
+                return;
+            }
+
+            const storageRef = ref(storage, `resumes/${id}`);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => {
+                    // Optional: You can show upload progress here
+                },
+                (error) => {
+                    console.error("Upload failed:", error);
+                    reject(error);
+                },
+                () => {
+                    // On successful upload, get the download URL
+                    getDownloadURL(uploadTask.snapshot.ref)
+                        .then((url) => {
+                            setDownloadURL(url); // Optional: Save URL to state
+                            resolve(url);        // Resolve the promise with the URL
+                        })
+                        .catch((error) => reject(error));
+                }
+            );
+        });
+    };
+
+
+    useEffect(() => {
+        console.log("downloadURL::::::>", downloadURL)
+    }, [downloadURL])
+
 
 
     return (
@@ -210,84 +305,91 @@ const Openings = () => {
                                 <>
                                     <ModalHeader className="flex flex-col gap-1">{applyClicked ? "Applicaiton Form" : "Job Details"}</ModalHeader>
                                     <ModalBody>
-                                        <div>
-                                            {applyClicked
-                                                ? <div className='flex flex-col gap-4'>
-                                                    <Input
-                                                        type="text"
-                                                        placeholder="Enter Name"
-                                                        name="fullName"
-                                                        value={formValues.fullName}
-                                                        onChange={handleInputChange} />
-                                                    <Input
-                                                        type="text"
-                                                        placeholder="Enter Number"
-                                                        name="phoneNumber"
-                                                        value={formValues.phoneNumber}
-                                                        onChange={handleInputChange}
-                                                    />
-                                                    <Input
-                                                        type="text"
-                                                        placeholder="Enter Email"
-                                                        name="email"
-                                                        value={formValues.email}
-                                                        onChange={handleInputChange}
-                                                    />
-                                                    <div className='flex flex-col md:flex-row gap-5'>
-                                                        <Select
-                                                            variant="bordered"
-                                                            placeholder="State"
-                                                            selectedKeys={[formValues.selectedState]}
-                                                            classNames={{
-                                                                trigger: "bg-white",
-                                                                listboxWrapper: "bg-white",
-                                                            }}
-                                                            onChange={handleSelectionChange}
-                                                        >
-                                                            {stateNames?.map((state) => (
-                                                                <SelectItem key={state}>
-                                                                    {state}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </Select>
-                                                        <Select
-                                                            variant="bordered"
-                                                            placeholder="City"
-                                                            selectedKeys={[formValues.selectedCity]}
-                                                            classNames={{
-                                                                trigger: "bg-white",
-                                                                listboxWrapper: "bg-white",
-                                                            }}
-                                                            onChange={handleCityChange}
-                                                        >
-                                                            {cities?.map((city) => (
-                                                                <SelectItem key={city}>
-                                                                    {city}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </Select>
+                                        {isLoading
+                                            ? <div className="flex justify-center items-center h-full">
+                                                <Spinner />
+                                            </div>
+                                            : <div>
+                                                {applyClicked
+                                                    ? <div className='flex flex-col gap-4'>
+                                                        <Input
+                                                            type="text"
+                                                            placeholder="Enter Name"
+                                                            name="fullName"
+                                                            value={formValues.fullName}
+                                                            onChange={handleInputChange} />
+                                                        <Input
+                                                            type="text"
+                                                            placeholder="Enter Number"
+                                                            name="phoneNumber"
+                                                            value={formValues.phoneNumber}
+                                                            onChange={handleInputChange}
+                                                        />
+                                                        <Input
+                                                            type="text"
+                                                            placeholder="Enter Email"
+                                                            name="email"
+                                                            value={formValues.email}
+                                                            onChange={handleInputChange}
+                                                        />
+                                                        <div className='flex flex-col md:flex-row gap-5'>
+                                                            <Select
+                                                                variant="bordered"
+                                                                placeholder="State"
+                                                                selectedKeys={[formValues.selectedState]}
+                                                                classNames={{
+                                                                    trigger: "bg-white",
+                                                                    listboxWrapper: "bg-white",
+                                                                }}
+                                                                onChange={handleSelectionChange}
+                                                            >
+                                                                {stateNames?.map((state) => (
+                                                                    <SelectItem key={state}>
+                                                                        {state}
+                                                                    </SelectItem>
+                                                                ))}
+                                                            </Select>
+                                                            <Select
+                                                                variant="bordered"
+                                                                placeholder="City"
+                                                                selectedKeys={[formValues.selectedCity]}
+                                                                classNames={{
+                                                                    trigger: "bg-white",
+                                                                    listboxWrapper: "bg-white",
+                                                                }}
+                                                                onChange={handleCityChange}
+                                                            >
+                                                                {cities?.map((city) => (
+                                                                    <SelectItem key={city}>
+                                                                        {city}
+                                                                    </SelectItem>
+                                                                ))}
+                                                            </Select>
+                                                        </div>
+                                                        <Input
+                                                            type="file"
+                                                            label="Attach Resume"
+                                                            onChange={(e) => handleFileChange(e)}
+                                                        />
                                                     </div>
-                                                    <Input
-                                                        type="file"
-                                                        label="Attach Resume"
-                                                    />
-                                                </div>
-                                                : <div className='flex flex-col gap-4'>
-                                                    <p className='text-xl font-bold'>
-                                                        {selectedData.title}
-                                                    </p>
-                                                    <p>
-                                                        <span className='font-semibold'>Location: </span>{selectedData.location}
-                                                    </p>
-                                                    <p>
-                                                        <span className='font-semibold'>Experience: </span>{selectedData.experience}
-                                                    </p>
-                                                    <p>
-                                                        <span className='font-semibold'>Description: </span>{selectedData.desc}
-                                                    </p>
-                                                </div>
-                                            }
-                                        </div>
+                                                    : <div className='flex flex-col gap-4'>
+                                                        <p className='text-xl font-bold'>
+                                                            {selectedData.title}
+                                                        </p>
+                                                        <p>
+                                                            <span className='font-semibold'>Location: </span>{selectedData.location}
+                                                        </p>
+                                                        <p>
+                                                            <span className='font-semibold'>Experience: </span>{selectedData.experience}
+                                                        </p>
+                                                        <p>
+                                                            <span className='font-semibold'>Description: </span>{selectedData.desc}
+                                                        </p>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+
 
                                     </ModalBody>
                                     <ModalFooter>

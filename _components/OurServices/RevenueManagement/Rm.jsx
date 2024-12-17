@@ -1,9 +1,21 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Button } from "@nextui-org/react";
 import Image from 'next/image'
 import IMAGES from "@/public/index";
+import ContactModal from '@/_components/OurServices/RevenueManagement/ContactModal';
 
 const Rm = () => {
+
+    const [modalClicked, setModalClicked] = useState(false);
+
+    const [serviceClicked, setServiceClicked] = useState(false);
+
+    const handleModal = (service) => {
+        setModalClicked(true)
+        setServiceClicked(service)
+    }
+
     return (
         <div className='w-full'>
             <div className='w-[90%] lg:w-[80%] m-auto bg-gray-100 rounded-2xl h-full'>
@@ -16,7 +28,7 @@ const Rm = () => {
                             pricing and the skill of managing the property online
                             on multiple platforms </p>
                         <div className="flex justify-start gap-4 text-gray-500">
-                            <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="none" size="md">
+                            <Button variant="shadow" color="default" className="bg-[#800000] text-white" radius="none" size="md" onClick={(e) => handleModal("Revenue Management")}>
                                 Schedule a Call
                             </Button>
                         </div>
@@ -50,6 +62,9 @@ const Rm = () => {
                     </div>
                 </div>
             </div>
+
+            <ContactModal modalClicked={modalClicked} onCloseClicked={(val) => setModalClicked(!val)} serviceClicked={serviceClicked}/>
+                
         </div>
     )
 }

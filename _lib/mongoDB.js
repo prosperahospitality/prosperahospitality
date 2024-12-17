@@ -13,7 +13,11 @@ async function connect() {
         }
         await mongoose.disconnect();
     }
-    const db = await mongoose.connect(process.env.MONGO_URL);
+    const db = await mongoose.connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+      });
     connection.isConneccted = db.connections[0].readyState;
     console.log("DB is connected");
 }
